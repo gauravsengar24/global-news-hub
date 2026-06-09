@@ -1,13 +1,13 @@
 [
   {
-    "id": "sample-5",
-    "title": "Australia Invests $2 Billion in Renewable Energy Grid Upgrades",
-    "description": "The Australian government announced a major investment in grid modernization to support the transition to renewable energy.",
-    "url": "https://example.com/au-renewable",
+    "id": "market-12",
+    "title": "ASX 200 Hits 6-Week High on Mining and Energy Rally",
+    "description": "Australia's S&P/ASX 200 reached a six-week high as mining and energy stocks surged on rising commodity prices, with BHP and Rio Tinto leading gains.",
+    "url": "https://example.com/asx-200-mining-rally",
     "image": "",
-    "publishedAt": "2026-06-08T23:00:00Z",
+    "publishedAt": "2026-06-08T20:00:00Z",
     "source": "ABC Australia",
     "region": "au",
-    "category": "business"
+    "category": "markets"
   }
 ]

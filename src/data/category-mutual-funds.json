@@ -1,0 +1,24 @@
+[
+  {
+    "id": "market-11",
+    "title": "Best Large Cap Mutual Funds to Invest in for Long Term Growth",
+    "description": "Analysis of top-performing large cap mutual funds with consistent 5-year track records, expense ratios, and fund manager insights for long-term investors.",
+    "url": "https://example.com/best-large-cap-mutual-funds",
+    "image": "",
+    "publishedAt": "2026-06-08T20:30:00Z",
+    "source": "Morningstar",
+    "region": "us",
+    "category": "mutual-funds"
+  },
+  {
+    "id": "market-13",
+    "title": "Emerging Market Debt Funds See Strongest Inflows in 2 Years",
+    "description": "Emerging market bond funds attracted their largest capital inflows in two years as investors search for yield in a lower interest rate environment.",
+    "url": "https://example.com/emerging-market-debt-inflows",
+    "image": "",
+    "publishedAt": "2026-06-08T19:30:00Z",
+    "source": "Financial Times",
+    "region": "em",
+    "category": "mutual-funds"
+  }
+]

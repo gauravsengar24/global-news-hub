@@ -1,0 +1,24 @@
+[
+  {
+    "id": "market-5",
+    "title": "Top Performing ETFs of Q2 2026: Tech and Healthcare Lead Gains",
+    "description": "Technology and healthcare sector ETFs have delivered double-digit returns in Q2 2026, with AI-focused funds gaining over 30% year-to-date.",
+    "url": "https://example.com/top-etfs-q2-2026",
+    "image": "",
+    "publishedAt": "2026-06-08T23:00:00Z",
+    "source": "Morningstar",
+    "region": "us",
+    "category": "etf"
+  },
+  {
+    "id": "market-9",
+    "title": "Bitcoin ETF Inflows Hit Record $2.8 Billion in Single Week",
+    "description": "Spot Bitcoin ETFs recorded their highest weekly inflow ever as institutional adoption accelerates following clearer regulatory guidelines from the SEC.",
+    "url": "https://example.com/bitcoin-etf-record-inflows",
+    "image": "",
+    "publishedAt": "2026-06-08T21:30:00Z",
+    "source": "Bloomberg",
+    "region": "us",
+    "category": "etf"
+  }
+]

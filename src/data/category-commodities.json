@@ -1,0 +1,24 @@
+[
+  {
+    "id": "market-2",
+    "title": "Gold Prices Surge Past $2,400 as Geopolitical Tensions Escalate",
+    "description": "Gold hit a new record high above $2,400 per ounce as investors sought safe-haven assets amid rising geopolitical tensions in the Middle East and Eastern Europe.",
+    "url": "https://example.com/gold-record-2400",
+    "image": "",
+    "publishedAt": "2026-06-09T00:10:00Z",
+    "source": "Bloomberg",
+    "region": "us",
+    "category": "commodities"
+  },
+  {
+    "id": "market-4",
+    "title": "Crude Oil Drops 5% as OPEC+ Considers Production Increase",
+    "description": "Oil prices fell sharply after reports that OPEC+ members are considering unwinding production cuts earlier than expected, potentially adding significant supply to global markets.",
+    "url": "https://example.com/crude-oil-drop-opec",
+    "image": "",
+    "publishedAt": "2026-06-08T23:30:00Z",
+    "source": "CNBC",
+    "region": "us",
+    "category": "commodities"
+  }
+]

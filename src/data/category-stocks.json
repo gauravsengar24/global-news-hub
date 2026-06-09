@@ -1,0 +1,35 @@
+[
+  {
+    "id": "market-3",
+    "title": "Nifty 50 Crosses 25,000 Mark for First Time on Strong FII Inflows",
+    "description": "India's Nifty 50 index breached the historic 25,000 level driven by sustained foreign institutional investor inflows and strong domestic economic data.",
+    "url": "https://example.com/nifty-25000",
+    "image": "",
+    "publishedAt": "2026-06-08T23:55:00Z",
+    "source": "Economic Times",
+    "region": "in",
+    "category": "stocks"
+  },
+  {
+    "id": "market-10",
+    "title": "Japan's Nikkei 225 Rebounds as Semiconductor Stocks Rally",
+    "description": "Japan's benchmark Nikkei 225 recovered from early losses led by semiconductor stocks on renewed AI chip demand, with Tokyo Electron and Advantest gaining over 4%.",
+    "url": "https://example.com/nikkei-semiconductor-rally",
+    "image": "",
+    "publishedAt": "2026-06-08T21:00:00Z",
+    "source": "Nikkei",
+    "region": "jp",
+    "category": "stocks"
+  },
+  {
+    "id": "market-15",
+    "title": "Hang Seng Index Rises as Tech Stocks Rebound on Policy Support",
+    "description": "Hong Kong's Hang Seng Index gained over 2% as Chinese technology stocks rebounded following signals of reduced regulatory pressure from Beijing.",
+    "url": "https://example.com/hang-seng-tech-rebound",
+    "image": "",
+    "publishedAt": "2026-06-08T18:30:00Z",
+    "source": "South China Morning Post",
+    "region": "cn",
+    "category": "stocks"
+  }
+]

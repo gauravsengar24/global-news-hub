@@ -26,7 +26,7 @@ const rest = catArticles.slice(1, 25);
   <Fragment slot="header"><Header /></Fragment>
   <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8 pb-16">
     <div class="flex items-center gap-3 mb-2">
-      <a href="/" class="text-sm text-gray-400 hover:text-blue-600 transition-colors">Home</a>
+      <a href="/" class="text-sm text-gray-400 hover:text-emerald-600 transition-colors">Home</a>
       <span class="text-gray-300">/</span>
       <span class="text-sm text-gray-600 font-medium">{categoryInfo.name}</span>
     </div>
@@ -40,7 +40,7 @@ const rest = catArticles.slice(1, 25);
         <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
           {rest.map((article) => (<NewsCard article={article} />))}
         </div>
-        {rest.length === 0 && <div class="text-center py-16"><p class="text-gray-400 text-lg">No articles in this category yet.</p></div>}
+        {rest.length === 0 && <div class="text-center py-16"><p class="text-gray-400 text-lg">No news in this sector yet.</p></div>}
       </div>
       <div class="lg:col-span-1">
         <Sidebar articles={allArticles} />

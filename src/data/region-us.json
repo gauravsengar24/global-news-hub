@@ -1,24 +1,79 @@
 [
   {
-    "id": "sample-1",
-    "title": "Global Markets Rally as Economic Indicators Improve Worldwide",
-    "description": "Stock markets across major economies surged as new data showed stronger-than-expected economic growth, boosting investor confidence.",
-    "url": "https://example.com/markets-rally",
+    "id": "market-1",
+    "title": "S&P 500 Hits All-Time High as Fed Signals Rate Cut in September",
+    "description": "The S&P 500 surged to a record close after the Federal Reserve signaled a potential interest rate cut at its September meeting, boosting investor confidence across global markets.",
+    "url": "https://example.com/sp500-record-fed-rate-cut",
     "image": "",
     "publishedAt": "2026-06-09T00:15:00Z",
     "source": "Reuters",
     "region": "us",
-    "category": "business"
+    "category": "markets"
   },
   {
-    "id": "sample-8",
-    "title": "US and India Strengthen Defense Technology Partnership",
-    "description": "The United States and India signed several agreements to collaborate on AI, cybersecurity, and defense systems.",
-    "url": "https://example.com/us-india-defense",
+    "id": "market-2",
+    "title": "Gold Prices Surge Past $2,400 as Geopolitical Tensions Escalate",
+    "description": "Gold hit a new record high above $2,400 per ounce as investors sought safe-haven assets amid rising geopolitical tensions in the Middle East and Eastern Europe.",
+    "url": "https://example.com/gold-record-2400",
     "image": "",
-    "publishedAt": "2026-06-08T22:00:00Z",
-    "source": "NPR",
+    "publishedAt": "2026-06-09T00:10:00Z",
+    "source": "Bloomberg",
     "region": "us",
-    "category": "world"
+    "category": "commodities"
+  },
+  {
+    "id": "market-4",
+    "title": "Crude Oil Drops 5% as OPEC+ Considers Production Increase",
+    "description": "Oil prices fell sharply after reports that OPEC+ members are considering unwinding production cuts earlier than expected, potentially adding significant supply to global markets.",
+    "url": "https://example.com/crude-oil-drop-opec",
+    "image": "",
+    "publishedAt": "2026-06-08T23:30:00Z",
+    "source": "CNBC",
+    "region": "us",
+    "category": "commodities"
+  },
+  {
+    "id": "market-5",
+    "title": "Top Performing ETFs of Q2 2026: Tech and Healthcare Lead Gains",
+    "description": "Technology and healthcare sector ETFs have delivered double-digit returns in Q2 2026, with AI-focused funds gaining over 30% year-to-date.",
+    "url": "https://example.com/top-etfs-q2-2026",
+    "image": "",
+    "publishedAt": "2026-06-08T23:00:00Z",
+    "source": "Morningstar",
+    "region": "us",
+    "category": "etf"
+  },
+  {
+    "id": "market-9",
+    "title": "Bitcoin ETF Inflows Hit Record $2.8 Billion in Single Week",
+    "description": "Spot Bitcoin ETFs recorded their highest weekly inflow ever as institutional adoption accelerates following clearer regulatory guidelines from the SEC.",
+    "url": "https://example.com/bitcoin-etf-record-inflows",
+    "image": "",
+    "publishedAt": "2026-06-08T21:30:00Z",
+    "source": "Bloomberg",
+    "region": "us",
+    "category": "etf"
+  },
+  {
+    "id": "market-11",
+    "title": "Best Large Cap Mutual Funds to Invest in for Long Term Growth",
+    "description": "Analysis of top-performing large cap mutual funds with consistent 5-year track records, expense ratios, and fund manager insights for long-term investors.",
+    "url": "https://example.com/best-large-cap-mutual-funds",
+    "image": "",
+    "publishedAt": "2026-06-08T20:30:00Z",
+    "source": "Morningstar",
+    "region": "us",
+    "category": "mutual-funds"
+  },
+  {
+    "id": "market-14",
+    "title": "Dow Jones Futures Point to Higher Open Ahead of Jobs Report",
+    "description": "US stock futures edged higher as traders awaited the monthly jobs report for clues on the labor market's health and its impact on Federal Reserve policy.",
+    "url": "https://example.com/dow-futures-jobs-report",
+    "image": "",
+    "publishedAt": "2026-06-08T19:00:00Z",
+    "source": "MarketWatch",
+    "region": "us",
+    "category": "futures"
   }
 ]

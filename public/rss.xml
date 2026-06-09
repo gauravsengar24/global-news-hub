@@ -1,119 +1,146 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
-    <title>Global News Hub</title>
-    <link>https://global-news.pages.dev</link>
-    <description>Latest breaking news from around the world</description>
+    <title>MarketPulse - Financial Markets News</title>
+    <link>https://gauravsengar24.github.io/global-news-hub</link>
+    <description>Real-time financial market news covering stocks, commodities, ETFs, mutual funds, forex, and global economic impact</description>
     <language>en</language>
-    <lastBuildDate>Tue, 09 Jun 2026 00:44:24 GMT</lastBuildDate>
-    <atom:link href="https://global-news.pages.dev/rss.xml" rel="self" type="application/rss+xml"/>
+    <lastBuildDate>Tue, 09 Jun 2026 01:42:54 GMT</lastBuildDate>
+    <atom:link href="https://gauravsengar24.github.io/global-news-hub/rss.xml" rel="self" type="application/rss+xml"/>
   <item>
-    <title>Global Markets Rally as Economic Indicators Improve Worldwide</title>
-    <link>https://example.com/markets-rally</link>
-    <description>Stock markets across major economies surged as new data showed stronger-than-expected economic growth, boosting investor confidence.</description>
+    <title>S&amp;P 500 Hits All-Time High as Fed Signals Rate Cut in September</title>
+    <link>https://example.com/sp500-record-fed-rate-cut</link>
+    <description>The S&amp;P 500 surged to a record close after the Federal Reserve signaled a potential interest rate cut at its September meeting, boosting investor confidence across global markets.</description>
     <pubDate>Tue, 09 Jun 2026 00:15:00 GMT</pubDate>
-    <guid>https://example.com/markets-rally</guid>
+    <guid isPermaLink="false">market-1</guid>
     <source>Reuters</source>
-    <category>business</category>
+    <category>markets</category>
   </item>
   <item>
-    <title>Japan Unveils New Quantum Computing Breakthrough at Tokyo Summit</title>
-    <link>https://example.com/japan-quantum</link>
-    <description>Japanese researchers announced a major milestone in quantum computing, demonstrating a 1000-qubit processor.</description>
+    <title>Gold Prices Surge Past $2,400 as Geopolitical Tensions Escalate</title>
+    <link>https://example.com/gold-record-2400</link>
+    <description>Gold hit a new record high above $2,400 per ounce as investors sought safe-haven assets amid rising geopolitical tensions in the Middle East and Eastern Europe.</description>
     <pubDate>Tue, 09 Jun 2026 00:10:00 GMT</pubDate>
-    <guid>https://example.com/japan-quantum</guid>
-    <source>NHK</source>
-    <category>technology</category>
+    <guid isPermaLink="false">market-2</guid>
+    <source>Bloomberg</source>
+    <category>commodities</category>
   </item>
   <item>
-    <title>India Launches Ambitious Space Mission to Study Solar Activity</title>
-    <link>https://example.com/india-space</link>
-    <description>ISRO successfully launched a new solar observation satellite designed to provide real-time data on solar flares.</description>
+    <title>Nifty 50 Crosses 25,000 Mark for First Time on Strong FII Inflows</title>
+    <link>https://example.com/nifty-25000</link>
+    <description>India&apos;s Nifty 50 index breached the historic 25,000 level driven by sustained foreign institutional investor inflows and strong domestic economic data.</description>
     <pubDate>Mon, 08 Jun 2026 23:55:00 GMT</pubDate>
-    <guid>https://example.com/india-space</guid>
-    <source>Times of India</source>
-    <category>science</category>
+    <guid isPermaLink="false">market-3</guid>
+    <source>Economic Times</source>
+    <category>stocks</category>
   </item>
   <item>
-    <title>UK Parliament Debates New Digital Regulation Framework</title>
-    <link>https://example.com/uk-digital</link>
-    <description>British lawmakers are reviewing comprehensive legislation aimed at strengthening online safety and data privacy.</description>
+    <title>Crude Oil Drops 5% as OPEC+ Considers Production Increase</title>
+    <link>https://example.com/crude-oil-drop-opec</link>
+    <description>Oil prices fell sharply after reports that OPEC+ members are considering unwinding production cuts earlier than expected, potentially adding significant supply to global markets.</description>
     <pubDate>Mon, 08 Jun 2026 23:30:00 GMT</pubDate>
-    <guid>https://example.com/uk-digital</guid>
-    <source>BBC</source>
-    <category>top</category>
+    <guid isPermaLink="false">market-4</guid>
+    <source>CNBC</source>
+    <category>commodities</category>
   </item>
   <item>
-    <title>Australia Invests $2 Billion in Renewable Energy Grid Upgrades</title>
-    <link>https://example.com/au-renewable</link>
-    <description>The Australian government announced a major investment in grid modernization to support the transition to renewable energy.</description>
+    <title>Top Performing ETFs of Q2 2026: Tech and Healthcare Lead Gains</title>
+    <link>https://example.com/top-etfs-q2-2026</link>
+    <description>Technology and healthcare sector ETFs have delivered double-digit returns in Q2 2026, with AI-focused funds gaining over 30% year-to-date.</description>
     <pubDate>Mon, 08 Jun 2026 23:00:00 GMT</pubDate>
-    <guid>https://example.com/au-renewable</guid>
-    <source>ABC Australia</source>
-    <category>business</category>
+    <guid isPermaLink="false">market-5</guid>
+    <source>Morningstar</source>
+    <category>etf</category>
   </item>
   <item>
-    <title>EU Leaders Agree on Landmark Climate Action Package</title>
-    <link>https://example.com/eu-climate</link>
-    <description>European Union heads of state reached a historic agreement on emissions reduction targets.</description>
+    <title>European Markets Rally on ECB Stimulus Hopes</title>
+    <link>https://example.com/europe-markets-ecb-stimulus</link>
+    <description>European stocks closed higher with the STOXX 600 gaining 1.8% as traders priced in potential European Central Bank stimulus measures to support the Eurozone economy.</description>
     <pubDate>Mon, 08 Jun 2026 22:45:00 GMT</pubDate>
-    <guid>https://example.com/eu-climate</guid>
-    <source>Euronews</source>
-    <category>world</category>
+    <guid isPermaLink="false">market-6</guid>
+    <source>Financial Times</source>
+    <category>markets</category>
   </item>
   <item>
-    <title>China Reports Strong Export Growth Amid Global Trade Recovery</title>
-    <link>https://example.com/china-exports</link>
-    <description>China&apos;s export sector showed resilience with double-digit growth in Q2.</description>
+    <title>China&apos;s Industrial Profits Surge 12% Signaling Economic Recovery</title>
+    <link>https://example.com/china-industrial-profits</link>
+    <description>China&apos;s industrial profits grew at the fastest pace in 18 months, suggesting that government stimulus measures are gaining traction in the world&apos;s second-largest economy.</description>
     <pubDate>Mon, 08 Jun 2026 22:30:00 GMT</pubDate>
-    <guid>https://example.com/china-exports</guid>
+    <guid isPermaLink="false">market-7</guid>
     <source>China Daily</source>
-    <category>business</category>
+    <category>economy</category>
   </item>
   <item>
-    <title>US and India Strengthen Defense Technology Partnership</title>
-    <link>https://example.com/us-india-defense</link>
-    <description>The United States and India signed several agreements to collaborate on AI, cybersecurity, and defense systems.</description>
+    <title>Rupee Strengthens to 82.50 Against Dollar on FII Inflows</title>
+    <link>https://example.com/rupee-strengthens</link>
+    <description>The Indian rupee appreciated to a three-month high against the US dollar as foreign portfolio investors continued to pour capital into Indian debt and equity markets.</description>
     <pubDate>Mon, 08 Jun 2026 22:00:00 GMT</pubDate>
-    <guid>https://example.com/us-india-defense</guid>
-    <source>NPR</source>
-    <category>world</category>
+    <guid isPermaLink="false">market-8</guid>
+    <source>Reuters</source>
+    <category>forex</category>
   </item>
   <item>
-    <title>Breakthrough in mRNA Technology Opens Door to New Vaccines</title>
-    <link>https://example.com/mrna-breakthrough</link>
-    <description>Scientists at Cambridge developed a next-generation mRNA platform for rapid vaccine development.</description>
+    <title>Bitcoin ETF Inflows Hit Record $2.8 Billion in Single Week</title>
+    <link>https://example.com/bitcoin-etf-record-inflows</link>
+    <description>Spot Bitcoin ETFs recorded their highest weekly inflow ever as institutional adoption accelerates following clearer regulatory guidelines from the SEC.</description>
     <pubDate>Mon, 08 Jun 2026 21:30:00 GMT</pubDate>
-    <guid>https://example.com/mrna-breakthrough</guid>
-    <source>BBC</source>
-    <category>health</category>
+    <guid isPermaLink="false">market-9</guid>
+    <source>Bloomberg</source>
+    <category>etf</category>
   </item>
   <item>
-    <title>Japan&apos;s Rugby Team Prepares for Historic Test Series</title>
-    <link>https://example.com/japan-rugby</link>
-    <description>The Brave Blossoms are gearing up for a three-match series against the All Blacks.</description>
+    <title>Japan&apos;s Nikkei 225 Rebounds as Semiconductor Stocks Rally</title>
+    <link>https://example.com/nikkei-semiconductor-rally</link>
+    <description>Japan&apos;s benchmark Nikkei 225 recovered from early losses led by semiconductor stocks on renewed AI chip demand, with Tokyo Electron and Advantest gaining over 4%.</description>
     <pubDate>Mon, 08 Jun 2026 21:00:00 GMT</pubDate>
-    <guid>https://example.com/japan-rugby</guid>
-    <source>NHK</source>
-    <category>sports</category>
+    <guid isPermaLink="false">market-10</guid>
+    <source>Nikkei</source>
+    <category>stocks</category>
   </item>
   <item>
-    <title>AI-Powered Translation Tool Breaks Language Barriers in Healthcare</title>
-    <link>https://example.com/ai-healthcare</link>
-    <description>A new AI translation system is being deployed in hospitals across Europe.</description>
+    <title>Best Large Cap Mutual Funds to Invest in for Long Term Growth</title>
+    <link>https://example.com/best-large-cap-mutual-funds</link>
+    <description>Analysis of top-performing large cap mutual funds with consistent 5-year track records, expense ratios, and fund manager insights for long-term investors.</description>
     <pubDate>Mon, 08 Jun 2026 20:30:00 GMT</pubDate>
-    <guid>https://example.com/ai-healthcare</guid>
-    <source>France24</source>
-    <category>technology</category>
+    <guid isPermaLink="false">market-11</guid>
+    <source>Morningstar</source>
+    <category>mutual-funds</category>
   </item>
   <item>
-    <title>Bollywood and Hollywood Join Forces for Record-Breaking Production</title>
-    <link>https://example.com/bollywood-hollywood</link>
-    <description>A landmark co-production between Indian and American studios.</description>
+    <title>ASX 200 Hits 6-Week High on Mining and Energy Rally</title>
+    <link>https://example.com/asx-200-mining-rally</link>
+    <description>Australia&apos;s S&amp;P/ASX 200 reached a six-week high as mining and energy stocks surged on rising commodity prices, with BHP and Rio Tinto leading gains.</description>
     <pubDate>Mon, 08 Jun 2026 20:00:00 GMT</pubDate>
-    <guid>https://example.com/bollywood-hollywood</guid>
-    <source>Times of India</source>
-    <category>entertainment</category>
+    <guid isPermaLink="false">market-12</guid>
+    <source>ABC Australia</source>
+    <category>markets</category>
+  </item>
+  <item>
+    <title>Emerging Market Debt Funds See Strongest Inflows in 2 Years</title>
+    <link>https://example.com/emerging-market-debt-inflows</link>
+    <description>Emerging market bond funds attracted their largest capital inflows in two years as investors search for yield in a lower interest rate environment.</description>
+    <pubDate>Mon, 08 Jun 2026 19:30:00 GMT</pubDate>
+    <guid isPermaLink="false">market-13</guid>
+    <source>Financial Times</source>
+    <category>mutual-funds</category>
+  </item>
+  <item>
+    <title>Dow Jones Futures Point to Higher Open Ahead of Jobs Report</title>
+    <link>https://example.com/dow-futures-jobs-report</link>
+    <description>US stock futures edged higher as traders awaited the monthly jobs report for clues on the labor market&apos;s health and its impact on Federal Reserve policy.</description>
+    <pubDate>Mon, 08 Jun 2026 19:00:00 GMT</pubDate>
+    <guid isPermaLink="false">market-14</guid>
+    <source>MarketWatch</source>
+    <category>futures</category>
+  </item>
+  <item>
+    <title>Hang Seng Index Rises as Tech Stocks Rebound on Policy Support</title>
+    <link>https://example.com/hang-seng-tech-rebound</link>
+    <description>Hong Kong&apos;s Hang Seng Index gained over 2% as Chinese technology stocks rebounded following signals of reduced regulatory pressure from Beijing.</description>
+    <pubDate>Mon, 08 Jun 2026 18:30:00 GMT</pubDate>
+    <guid isPermaLink="false">market-15</guid>
+    <source>South China Morning Post</source>
+    <category>stocks</category>
   </item>
   </channel>
 </rss>

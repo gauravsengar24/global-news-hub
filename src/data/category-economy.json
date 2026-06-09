@@ -9,16 +9,5 @@
     "source": "China Daily",
     "region": "cn",
     "category": "economy"
-  },
-  {
-    "id": "market-15",
-    "title": "Hang Seng Index Rises as Tech Stocks Rebound on Policy Support",
-    "description": "Hong Kong's Hang Seng Index gained over 2% as Chinese technology stocks rebounded following signals of reduced regulatory pressure from Beijing.",
-    "url": "https://example.com/hang-seng-tech-rebound",
-    "image": "",
-    "publishedAt": "2026-06-08T18:30:00Z",
-    "source": "South China Morning Post",
-    "region": "cn",
-    "category": "stocks"
   }
 ]

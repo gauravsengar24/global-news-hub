@@ -1,0 +1,35 @@
+[
+  {
+    "id": "market-1",
+    "title": "S&P 500 Hits All-Time High as Fed Signals Rate Cut in September",
+    "description": "The S&P 500 surged to a record close after the Federal Reserve signaled a potential interest rate cut at its September meeting, boosting investor confidence across global markets.",
+    "url": "https://example.com/sp500-record-fed-rate-cut",
+    "image": "",
+    "publishedAt": "2026-06-09T00:15:00Z",
+    "source": "Reuters",
+    "region": "us",
+    "category": "markets"
+  },
+  {
+    "id": "market-6",
+    "title": "European Markets Rally on ECB Stimulus Hopes",
+    "description": "European stocks closed higher with the STOXX 600 gaining 1.8% as traders priced in potential European Central Bank stimulus measures to support the Eurozone economy.",
+    "url": "https://example.com/europe-markets-ecb-stimulus",
+    "image": "",
+    "publishedAt": "2026-06-08T22:45:00Z",
+    "source": "Financial Times",
+    "region": "gb",
+    "category": "markets"
+  },
+  {
+    "id": "market-12",
+    "title": "ASX 200 Hits 6-Week High on Mining and Energy Rally",
+    "description": "Australia's S&P/ASX 200 reached a six-week high as mining and energy stocks surged on rising commodity prices, with BHP and Rio Tinto leading gains.",
+    "url": "https://example.com/asx-200-mining-rally",
+    "image": "",
+    "publishedAt": "2026-06-08T20:00:00Z",
+    "source": "ABC Australia",
+    "region": "au",
+    "category": "markets"
+  }
+]

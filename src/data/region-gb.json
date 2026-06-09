@@ -1,24 +1,13 @@
 [
   {
-    "id": "sample-4",
-    "title": "UK Parliament Debates New Digital Regulation Framework",
-    "description": "British lawmakers are reviewing comprehensive legislation aimed at strengthening online safety and data privacy.",
-    "url": "https://example.com/uk-digital",
+    "id": "market-6",
+    "title": "European Markets Rally on ECB Stimulus Hopes",
+    "description": "European stocks closed higher with the STOXX 600 gaining 1.8% as traders priced in potential European Central Bank stimulus measures to support the Eurozone economy.",
+    "url": "https://example.com/europe-markets-ecb-stimulus",
     "image": "",
-    "publishedAt": "2026-06-08T23:30:00Z",
-    "source": "BBC",
+    "publishedAt": "2026-06-08T22:45:00Z",
+    "source": "Financial Times",
     "region": "gb",
-    "category": "top"
-  },
-  {
-    "id": "sample-9",
-    "title": "Breakthrough in mRNA Technology Opens Door to New Vaccines",
-    "description": "Scientists at Cambridge developed a next-generation mRNA platform for rapid vaccine development.",
-    "url": "https://example.com/mrna-breakthrough",
-    "image": "",
-    "publishedAt": "2026-06-08T21:30:00Z",
-    "source": "BBC",
-    "region": "gb",
-    "category": "health"
+    "category": "markets"
   }
 ]

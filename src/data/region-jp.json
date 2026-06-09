@@ -1,24 +1,13 @@
 [
   {
-    "id": "sample-2",
-    "title": "Japan Unveils New Quantum Computing Breakthrough at Tokyo Summit",
-    "description": "Japanese researchers announced a major milestone in quantum computing, demonstrating a 1000-qubit processor.",
-    "url": "https://example.com/japan-quantum",
-    "image": "",
-    "publishedAt": "2026-06-09T00:10:00Z",
-    "source": "NHK",
-    "region": "jp",
-    "category": "technology"
-  },
-  {
-    "id": "sample-10",
-    "title": "Japan's Rugby Team Prepares for Historic Test Series",
-    "description": "The Brave Blossoms are gearing up for a three-match series against the All Blacks.",
-    "url": "https://example.com/japan-rugby",
+    "id": "market-10",
+    "title": "Japan's Nikkei 225 Rebounds as Semiconductor Stocks Rally",
+    "description": "Japan's benchmark Nikkei 225 recovered from early losses led by semiconductor stocks on renewed AI chip demand, with Tokyo Electron and Advantest gaining over 4%.",
+    "url": "https://example.com/nikkei-semiconductor-rally",
     "image": "",
     "publishedAt": "2026-06-08T21:00:00Z",
-    "source": "NHK",
+    "source": "Nikkei",
     "region": "jp",
-    "category": "sports"
+    "category": "stocks"
   }
 ]
