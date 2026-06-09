@@ -1,0 +1,35 @@
+[
+  {
+    "id": "sample-1",
+    "title": "Global Markets Rally as Economic Indicators Improve Worldwide",
+    "description": "Stock markets across major economies surged as new data showed stronger-than-expected economic growth, boosting investor confidence.",
+    "url": "https://example.com/markets-rally",
+    "image": "",
+    "publishedAt": "2026-06-09T00:15:00Z",
+    "source": "Reuters",
+    "region": "us",
+    "category": "business"
+  },
+  {
+    "id": "sample-5",
+    "title": "Australia Invests $2 Billion in Renewable Energy Grid Upgrades",
+    "description": "The Australian government announced a major investment in grid modernization to support the transition to renewable energy.",
+    "url": "https://example.com/au-renewable",
+    "image": "",
+    "publishedAt": "2026-06-08T23:00:00Z",
+    "source": "ABC Australia",
+    "region": "au",
+    "category": "business"
+  },
+  {
+    "id": "sample-7",
+    "title": "China Reports Strong Export Growth Amid Global Trade Recovery",
+    "description": "China's export sector showed resilience with double-digit growth in Q2.",
+    "url": "https://example.com/china-exports",
+    "image": "",
+    "publishedAt": "2026-06-08T22:30:00Z",
+    "source": "China Daily",
+    "region": "cn",
+    "category": "business"
+  }
+]

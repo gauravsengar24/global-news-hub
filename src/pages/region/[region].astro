@@ -1,0 +1,51 @@
+---
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import NewsCard from '../../components/NewsCard.astro';
+import Footer from '../../components/Footer.astro';
+import Sidebar from '../../components/Sidebar.astro';
+import { REGIONS, formatDate } from '../../lib/regions';
+import type { Article } from '../../lib/types';
+
+export function getStaticPaths() {
+  return Object.entries(REGIONS).map(([code, region]) => ({
+    params: { region: code },
+    props: { regionCode: code, regionInfo: region },
+  }));
+}
+
+const { regionCode, regionInfo } = Astro.props;
+const { default: allArticles } = await import('../../data/articles.json');
+
+const regionArticles = allArticles.filter((a: Article) => a.region === regionCode);
+const featured = regionArticles.slice(0, 1);
+const rest = regionArticles.slice(1, 25);
+---
+
+<Base>
+  <Fragment slot="header"><Header /></Fragment>
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8 pb-16">
+    <div class="flex items-center gap-3 mb-2">
+      <a href="/" class="text-sm text-gray-400 hover:text-blue-600 transition-colors">Home</a>
+      <span class="text-gray-300">/</span>
+      <span class="text-sm text-gray-600 font-medium">{regionInfo.flag} {regionInfo.name}</span>
+    </div>
+    <div class="flex items-center gap-3 mb-8">
+      <h1 class="text-2xl sm:text-3xl lg:text-4xl font-black text-gray-900 tracking-tight">{regionInfo.flag} {regionInfo.name} News</h1>
+      <span class="text-xs text-gray-400 bg-gray-100 px-2.5 py-1 rounded-full">{regionArticles.length} stories</span>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+      <div class="lg:col-span-3">
+        {featured.length > 0 && <div class="mb-8"><NewsCard article={featured[0]} featured={true} /></div>}
+        <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
+          {rest.map((article) => (<NewsCard article={article} />))}
+        </div>
+        {rest.length === 0 && <div class="text-center py-16"><p class="text-gray-400 text-lg">No articles available for this region yet.</p></div>}
+      </div>
+      <div class="lg:col-span-1">
+        <Sidebar articles={allArticles} title="Trending Worldwide" />
+      </div>
+    </div>
+  </section>
+  <Fragment slot="footer"><Footer /></Fragment>
+</Base>

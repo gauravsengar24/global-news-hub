@@ -1,0 +1,51 @@
+name: Build and Deploy to Cloudflare Pages
+
+on:
+  schedule:
+    # Every 30 minutes during peak hours; every 2 hours otherwise
+    - cron: '*/30 6-22 * * *'
+    - cron: '0 0-5,23 * * *'
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  deployments: write
+
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Fetch latest news
+        run: node scripts/fetch-news.js
+        env:
+          NEWSAPI_KEY: ${{ secrets.NEWSAPI_KEY }}
+          GNEWS_KEY: ${{ secrets.GNEWS_KEY }}
+
+      - name: Generate RSS & Sitemap
+        run: node scripts/generate-sitemap.js
+
+      - name: Build Astro site
+        run: npx astro build
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy dist --project-name=global-news-hub --branch=${{ github.head_ref || github.ref_name }}

@@ -1,0 +1,24 @@
+[
+  {
+    "id": "sample-1",
+    "title": "Global Markets Rally as Economic Indicators Improve Worldwide",
+    "description": "Stock markets across major economies surged as new data showed stronger-than-expected economic growth, boosting investor confidence.",
+    "url": "https://example.com/markets-rally",
+    "image": "",
+    "publishedAt": "2026-06-09T00:15:00Z",
+    "source": "Reuters",
+    "region": "us",
+    "category": "business"
+  },
+  {
+    "id": "sample-8",
+    "title": "US and India Strengthen Defense Technology Partnership",
+    "description": "The United States and India signed several agreements to collaborate on AI, cybersecurity, and defense systems.",
+    "url": "https://example.com/us-india-defense",
+    "image": "",
+    "publishedAt": "2026-06-08T22:00:00Z",
+    "source": "NPR",
+    "region": "us",
+    "category": "world"
+  }
+]

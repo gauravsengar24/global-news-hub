@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Global News Hub</title>
+    <link>https://global-news.pages.dev</link>
+    <description>Latest breaking news from around the world</description>
+    <language>en</language>
+    <lastBuildDate>Tue, 09 Jun 2026 00:44:24 GMT</lastBuildDate>
+    <atom:link href="https://global-news.pages.dev/rss.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Global Markets Rally as Economic Indicators Improve Worldwide</title>
+    <link>https://example.com/markets-rally</link>
+    <description>Stock markets across major economies surged as new data showed stronger-than-expected economic growth, boosting investor confidence.</description>
+    <pubDate>Tue, 09 Jun 2026 00:15:00 GMT</pubDate>
+    <guid>https://example.com/markets-rally</guid>
+    <source>Reuters</source>
+    <category>business</category>
+  </item>
+  <item>
+    <title>Japan Unveils New Quantum Computing Breakthrough at Tokyo Summit</title>
+    <link>https://example.com/japan-quantum</link>
+    <description>Japanese researchers announced a major milestone in quantum computing, demonstrating a 1000-qubit processor.</description>
+    <pubDate>Tue, 09 Jun 2026 00:10:00 GMT</pubDate>
+    <guid>https://example.com/japan-quantum</guid>
+    <source>NHK</source>
+    <category>technology</category>
+  </item>
+  <item>
+    <title>India Launches Ambitious Space Mission to Study Solar Activity</title>
+    <link>https://example.com/india-space</link>
+    <description>ISRO successfully launched a new solar observation satellite designed to provide real-time data on solar flares.</description>
+    <pubDate>Mon, 08 Jun 2026 23:55:00 GMT</pubDate>
+    <guid>https://example.com/india-space</guid>
+    <source>Times of India</source>
+    <category>science</category>
+  </item>
+  <item>
+    <title>UK Parliament Debates New Digital Regulation Framework</title>
+    <link>https://example.com/uk-digital</link>
+    <description>British lawmakers are reviewing comprehensive legislation aimed at strengthening online safety and data privacy.</description>
+    <pubDate>Mon, 08 Jun 2026 23:30:00 GMT</pubDate>
+    <guid>https://example.com/uk-digital</guid>
+    <source>BBC</source>
+    <category>top</category>
+  </item>
+  <item>
+    <title>Australia Invests $2 Billion in Renewable Energy Grid Upgrades</title>
+    <link>https://example.com/au-renewable</link>
+    <description>The Australian government announced a major investment in grid modernization to support the transition to renewable energy.</description>
+    <pubDate>Mon, 08 Jun 2026 23:00:00 GMT</pubDate>
+    <guid>https://example.com/au-renewable</guid>
+    <source>ABC Australia</source>
+    <category>business</category>
+  </item>
+  <item>
+    <title>EU Leaders Agree on Landmark Climate Action Package</title>
+    <link>https://example.com/eu-climate</link>
+    <description>European Union heads of state reached a historic agreement on emissions reduction targets.</description>
+    <pubDate>Mon, 08 Jun 2026 22:45:00 GMT</pubDate>
+    <guid>https://example.com/eu-climate</guid>
+    <source>Euronews</source>
+    <category>world</category>
+  </item>
+  <item>
+    <title>China Reports Strong Export Growth Amid Global Trade Recovery</title>
+    <link>https://example.com/china-exports</link>
+    <description>China&apos;s export sector showed resilience with double-digit growth in Q2.</description>
+    <pubDate>Mon, 08 Jun 2026 22:30:00 GMT</pubDate>
+    <guid>https://example.com/china-exports</guid>
+    <source>China Daily</source>
+    <category>business</category>
+  </item>
+  <item>
+    <title>US and India Strengthen Defense Technology Partnership</title>
+    <link>https://example.com/us-india-defense</link>
+    <description>The United States and India signed several agreements to collaborate on AI, cybersecurity, and defense systems.</description>
+    <pubDate>Mon, 08 Jun 2026 22:00:00 GMT</pubDate>
+    <guid>https://example.com/us-india-defense</guid>
+    <source>NPR</source>
+    <category>world</category>
+  </item>
+  <item>
+    <title>Breakthrough in mRNA Technology Opens Door to New Vaccines</title>
+    <link>https://example.com/mrna-breakthrough</link>
+    <description>Scientists at Cambridge developed a next-generation mRNA platform for rapid vaccine development.</description>
+    <pubDate>Mon, 08 Jun 2026 21:30:00 GMT</pubDate>
+    <guid>https://example.com/mrna-breakthrough</guid>
+    <source>BBC</source>
+    <category>health</category>
+  </item>
+  <item>
+    <title>Japan&apos;s Rugby Team Prepares for Historic Test Series</title>
+    <link>https://example.com/japan-rugby</link>
+    <description>The Brave Blossoms are gearing up for a three-match series against the All Blacks.</description>
+    <pubDate>Mon, 08 Jun 2026 21:00:00 GMT</pubDate>
+    <guid>https://example.com/japan-rugby</guid>
+    <source>NHK</source>
+    <category>sports</category>
+  </item>
+  <item>
+    <title>AI-Powered Translation Tool Breaks Language Barriers in Healthcare</title>
+    <link>https://example.com/ai-healthcare</link>
+    <description>A new AI translation system is being deployed in hospitals across Europe.</description>
+    <pubDate>Mon, 08 Jun 2026 20:30:00 GMT</pubDate>
+    <guid>https://example.com/ai-healthcare</guid>
+    <source>France24</source>
+    <category>technology</category>
+  </item>
+  <item>
+    <title>Bollywood and Hollywood Join Forces for Record-Breaking Production</title>
+    <link>https://example.com/bollywood-hollywood</link>
+    <description>A landmark co-production between Indian and American studios.</description>
+    <pubDate>Mon, 08 Jun 2026 20:00:00 GMT</pubDate>
+    <guid>https://example.com/bollywood-hollywood</guid>
+    <source>Times of India</source>
+    <category>entertainment</category>
+  </item>
+  </channel>
+</rss>

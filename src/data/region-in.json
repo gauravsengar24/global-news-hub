@@ -1,0 +1,24 @@
+[
+  {
+    "id": "sample-3",
+    "title": "India Launches Ambitious Space Mission to Study Solar Activity",
+    "description": "ISRO successfully launched a new solar observation satellite designed to provide real-time data on solar flares.",
+    "url": "https://example.com/india-space",
+    "image": "",
+    "publishedAt": "2026-06-08T23:55:00Z",
+    "source": "Times of India",
+    "region": "in",
+    "category": "science"
+  },
+  {
+    "id": "sample-12",
+    "title": "Bollywood and Hollywood Join Forces for Record-Breaking Production",
+    "description": "A landmark co-production between Indian and American studios.",
+    "url": "https://example.com/bollywood-hollywood",
+    "image": "",
+    "publishedAt": "2026-06-08T20:00:00Z",
+    "source": "Times of India",
+    "region": "in",
+    "category": "entertainment"
+  }
+]

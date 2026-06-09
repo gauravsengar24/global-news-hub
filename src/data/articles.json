@@ -1,0 +1,134 @@
+[
+  {
+    "id": "sample-1",
+    "title": "Global Markets Rally as Economic Indicators Improve Worldwide",
+    "description": "Stock markets across major economies surged as new data showed stronger-than-expected economic growth, boosting investor confidence.",
+    "url": "https://example.com/markets-rally",
+    "image": "",
+    "publishedAt": "2026-06-09T00:15:00Z",
+    "source": "Reuters",
+    "region": "us",
+    "category": "business"
+  },
+  {
+    "id": "sample-2",
+    "title": "Japan Unveils New Quantum Computing Breakthrough at Tokyo Summit",
+    "description": "Japanese researchers announced a major milestone in quantum computing, demonstrating a 1000-qubit processor.",
+    "url": "https://example.com/japan-quantum",
+    "image": "",
+    "publishedAt": "2026-06-09T00:10:00Z",
+    "source": "NHK",
+    "region": "jp",
+    "category": "technology"
+  },
+  {
+    "id": "sample-3",
+    "title": "India Launches Ambitious Space Mission to Study Solar Activity",
+    "description": "ISRO successfully launched a new solar observation satellite designed to provide real-time data on solar flares.",
+    "url": "https://example.com/india-space",
+    "image": "",
+    "publishedAt": "2026-06-08T23:55:00Z",
+    "source": "Times of India",
+    "region": "in",
+    "category": "science"
+  },
+  {
+    "id": "sample-4",
+    "title": "UK Parliament Debates New Digital Regulation Framework",
+    "description": "British lawmakers are reviewing comprehensive legislation aimed at strengthening online safety and data privacy.",
+    "url": "https://example.com/uk-digital",
+    "image": "",
+    "publishedAt": "2026-06-08T23:30:00Z",
+    "source": "BBC",
+    "region": "gb",
+    "category": "top"
+  },
+  {
+    "id": "sample-5",
+    "title": "Australia Invests $2 Billion in Renewable Energy Grid Upgrades",
+    "description": "The Australian government announced a major investment in grid modernization to support the transition to renewable energy.",
+    "url": "https://example.com/au-renewable",
+    "image": "",
+    "publishedAt": "2026-06-08T23:00:00Z",
+    "source": "ABC Australia",
+    "region": "au",
+    "category": "business"
+  },
+  {
+    "id": "sample-6",
+    "title": "EU Leaders Agree on Landmark Climate Action Package",
+    "description": "European Union heads of state reached a historic agreement on emissions reduction targets.",
+    "url": "https://example.com/eu-climate",
+    "image": "",
+    "publishedAt": "2026-06-08T22:45:00Z",
+    "source": "Euronews",
+    "region": "eu",
+    "category": "world"
+  },
+  {
+    "id": "sample-7",
+    "title": "China Reports Strong Export Growth Amid Global Trade Recovery",
+    "description": "China's export sector showed resilience with double-digit growth in Q2.",
+    "url": "https://example.com/china-exports",
+    "image": "",
+    "publishedAt": "2026-06-08T22:30:00Z",
+    "source": "China Daily",
+    "region": "cn",
+    "category": "business"
+  },
+  {
+    "id": "sample-8",
+    "title": "US and India Strengthen Defense Technology Partnership",
+    "description": "The United States and India signed several agreements to collaborate on AI, cybersecurity, and defense systems.",
+    "url": "https://example.com/us-india-defense",
+    "image": "",
+    "publishedAt": "2026-06-08T22:00:00Z",
+    "source": "NPR",
+    "region": "us",
+    "category": "world"
+  },
+  {
+    "id": "sample-9",
+    "title": "Breakthrough in mRNA Technology Opens Door to New Vaccines",
+    "description": "Scientists at Cambridge developed a next-generation mRNA platform for rapid vaccine development.",
+    "url": "https://example.com/mrna-breakthrough",
+    "image": "",
+    "publishedAt": "2026-06-08T21:30:00Z",
+    "source": "BBC",
+    "region": "gb",
+    "category": "health"
+  },
+  {
+    "id": "sample-10",
+    "title": "Japan's Rugby Team Prepares for Historic Test Series",
+    "description": "The Brave Blossoms are gearing up for a three-match series against the All Blacks.",
+    "url": "https://example.com/japan-rugby",
+    "image": "",
+    "publishedAt": "2026-06-08T21:00:00Z",
+    "source": "NHK",
+    "region": "jp",
+    "category": "sports"
+  },
+  {
+    "id": "sample-11",
+    "title": "AI-Powered Translation Tool Breaks Language Barriers in Healthcare",
+    "description": "A new AI translation system is being deployed in hospitals across Europe.",
+    "url": "https://example.com/ai-healthcare",
+    "image": "",
+    "publishedAt": "2026-06-08T20:30:00Z",
+    "source": "France24",
+    "region": "eu",
+    "category": "technology"
+  },
+  {
+    "id": "sample-12",
+    "title": "Bollywood and Hollywood Join Forces for Record-Breaking Production",
+    "description": "A landmark co-production between Indian and American studios.",
+    "url": "https://example.com/bollywood-hollywood",
+    "image": "",
+    "publishedAt": "2026-06-08T20:00:00Z",
+    "source": "Times of India",
+    "region": "in",
+    "category": "entertainment"
+  }
+]

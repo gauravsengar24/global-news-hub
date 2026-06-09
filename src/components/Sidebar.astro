@@ -1,0 +1,67 @@
+---
+import { CATEGORIES, formatDate } from '../lib/regions';
+import type { Article } from '../lib/types';
+
+export interface Props {
+  articles: Article[];
+  title?: string;
+}
+
+const { articles, title } = Astro.props;
+const recentArticles = articles.slice(0, 5);
+const categoryCounts = {};
+CATEGORIES.forEach(c => categoryCounts[c.id] = articles.filter(a => a.category === c.id).length);
+---
+
+<aside class="space-y-6">
+  {title && (
+    <div>
+      <h2 class="text-lg font-bold text-gray-900 mb-3">{title}</h2>
+      <div class="w-10 h-1 bg-blue-600 rounded-full"></div>
+    </div>
+  )}
+
+  <!-- Latest News -->
+  <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
+    <h3 class="text-sm font-bold text-gray-900 uppercase tracking-wider mb-4">
+      Latest Headlines
+    </h3>
+    <ul class="space-y-3">
+      {recentArticles.map((article) => (
+        <li>
+          <a
+            href={article.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group block"
+          >
+            <h4 class="text-sm font-medium text-gray-700 group-hover:text-blue-600 transition-colors line-clamp-2 leading-snug">
+              {article.title}
+            </h4>
+            <time class="text-xs text-gray-400 mt-1 block">{formatDate(article.publishedAt)}</time>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  <!-- Categories -->
+  <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
+    <h3 class="text-sm font-bold text-gray-900 uppercase tracking-wider mb-4">
+      Categories
+    </h3>
+    <div class="space-y-2">
+      {CATEGORIES.map((cat) => (
+        <a
+          href={`/category/${cat.id}`}
+          class="flex items-center justify-between px-3 py-2 rounded-lg text-sm text-gray-600 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+        >
+          <span>{cat.name}</span>
+          <span class="text-xs bg-gray-100 text-gray-500 px-2 py-0.5 rounded-full">
+            {categoryCounts[cat.id] || 0}
+          </span>
+        </a>
+      ))}
+    </div>
+  </div>
+</aside>

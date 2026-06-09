@@ -1,0 +1,24 @@
+[
+  {
+    "id": "sample-2",
+    "title": "Japan Unveils New Quantum Computing Breakthrough at Tokyo Summit",
+    "description": "Japanese researchers announced a major milestone in quantum computing, demonstrating a 1000-qubit processor.",
+    "url": "https://example.com/japan-quantum",
+    "image": "",
+    "publishedAt": "2026-06-09T00:10:00Z",
+    "source": "NHK",
+    "region": "jp",
+    "category": "technology"
+  },
+  {
+    "id": "sample-11",
+    "title": "AI-Powered Translation Tool Breaks Language Barriers in Healthcare",
+    "description": "A new AI translation system is being deployed in hospitals across Europe.",
+    "url": "https://example.com/ai-healthcare",
+    "image": "",
+    "publishedAt": "2026-06-08T20:30:00Z",
+    "source": "France24",
+    "region": "eu",
+    "category": "technology"
+  }
+]

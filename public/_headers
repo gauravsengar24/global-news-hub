@@ -1,0 +1,10 @@
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+
+/rss.xml
+  content-type: application/rss+xml
+
+/sitemap.xml
+  content-type: application/xml

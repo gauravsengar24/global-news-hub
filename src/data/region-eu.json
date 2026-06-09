@@ -1,0 +1,24 @@
+[
+  {
+    "id": "sample-6",
+    "title": "EU Leaders Agree on Landmark Climate Action Package",
+    "description": "European Union heads of state reached a historic agreement on emissions reduction targets.",
+    "url": "https://example.com/eu-climate",
+    "image": "",
+    "publishedAt": "2026-06-08T22:45:00Z",
+    "source": "Euronews",
+    "region": "eu",
+    "category": "world"
+  },
+  {
+    "id": "sample-11",
+    "title": "AI-Powered Translation Tool Breaks Language Barriers in Healthcare",
+    "description": "A new AI translation system is being deployed in hospitals across Europe.",
+    "url": "https://example.com/ai-healthcare",
+    "image": "",
+    "publishedAt": "2026-06-08T20:30:00Z",
+    "source": "France24",
+    "region": "eu",
+    "category": "technology"
+  }
+]
