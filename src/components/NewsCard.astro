@@ -42,16 +42,16 @@ const regionColors: Record<string, string> = {
       featured ? 'h-64 sm:h-80 lg:h-96' : horizontal ? 'w-48 h-full min-h-[120px]' : 'h-44 sm:h-48',
     ]}>
       {article.image ? (
-        <img src={article.image} alt={article.title}
-          class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+        <img src={article.image} alt={article.title} width={featured ? 800 : horizontal ? 240 : 400} height={featured ? 480 : horizontal ? 180 : 240}
+          class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async" />
       ) : (
-        <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-canvas-soft to-hairline/50">
-          <svg class="w-10 h-10 text-ink-faint" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-canvas-soft to-hairline/50" aria-hidden="true">
+          <svg class="w-10 h-10 text-ink-faint" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
           </svg>
         </div>
       )}
-      <div class="absolute top-2.5 left-2.5 flex gap-1.5">
+      <div class="absolute top-2.5 left-2.5 flex gap-1.5" aria-hidden="true">
         <span class={`px-2 py-0.5 type-micro font-bold uppercase tracking-wider rounded ${categoryColors[article.category] || 'bg-canvas-soft text-ink-mute'}`}>
           {article.category}
         </span>
@@ -66,7 +66,7 @@ const regionColors: Record<string, string> = {
     ]}>
       <div class="flex items-center gap-2 type-micro text-ink-faint mb-1.5">
         <span class="font-medium text-ink-mute truncate max-w-[120px]">{hostname}</span>
-        <span>·</span>
+        <span aria-hidden="true">·</span>
         <time datetime={article.publishedAt} class="whitespace-nowrap">{timeAgo(article.publishedAt)}</time>
       </div>
       <h3 class:list={[

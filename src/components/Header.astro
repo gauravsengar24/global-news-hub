@@ -6,7 +6,7 @@ import { REGIONS, MARKET_INDICES } from '../lib/regions';
 <div class="bg-primary-deep text-on-primary overflow-hidden border-b border-hairline-dark/30">
   <div class="flex">
     <div class="flex-none flex items-center gap-2 bg-primary-deep px-4 py-1.5 z-10 relative">
-      <span class="market-open-dot"></span>
+      <span class="market-open-dot" aria-hidden="true"></span>
       <span class="type-micro font-semibold uppercase tracking-wider text-on-dark-mute">Markets</span>
     </div>
     <div class="overflow-hidden relative flex-1">
@@ -14,8 +14,8 @@ import { REGIONS, MARKET_INDICES } from '../lib/regions';
         {[...MARKET_INDICES, ...MARKET_INDICES].map((idx, i) => (
           <a key={i} href={`/region/${idx.region}`} class="flex-none flex items-center gap-2.5 px-4 border-r border-hairline-dark/20 hover:bg-primary/50 transition-colors group">
             <span class="type-micro font-semibold text-on-dark-mute group-hover:text-on-primary">{idx.name}</span>
-            <span class="type-micro text-on-dark-faint">{idx.value}</span>
-            <span class={`type-micro font-semibold ${idx.up ? 'text-positive' : 'text-negative'}`}>
+            <span class="type-micro text-on-dark-faint tabular-nums">{idx.value}</span>
+            <span class={`type-micro font-semibold tabular-nums ${idx.up ? 'text-positive' : 'text-negative'}`}>
               {idx.up ? '▲' : '▼'} {idx.change}
             </span>
           </a>
@@ -26,12 +26,12 @@ import { REGIONS, MARKET_INDICES } from '../lib/regions';
 </div>
 
 <!-- Nav Bar Dark -->
-<header class="sticky top-0 z-50 bg-primary border-b border-hairline-dark/20">
+<header class="sticky top-0 z-50 bg-primary/95 backdrop-blur-sm border-b border-hairline-dark/20">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-12">
       <div class="flex items-center gap-6">
-        <a href="/" class="flex items-center gap-1.5 group flex-shrink-0">
-          <svg class="w-7 h-7 text-surface-violet-soft" viewBox="0 0 24 24" fill="currentColor">
+        <a href="/" class="flex items-center gap-1.5 group flex-shrink-0" aria-label="MarketPulse Home">
+          <svg class="w-7 h-7 text-surface-violet-soft" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
           </svg>
           <span class="text-lg font-bold text-on-primary tracking-tight" style="font-weight:540">
@@ -39,7 +39,7 @@ import { REGIONS, MARKET_INDICES } from '../lib/regions';
           </span>
         </a>
 
-        <nav class="hidden md:flex items-center gap-0.5">
+        <nav class="hidden md:flex items-center gap-0.5" aria-label="Main navigation">
           <a href="/" class="px-3 py-1.5 type-body-md font-medium text-on-primary bg-on-primary/10 rounded-md">Home</a>
           {Object.entries(REGIONS).map(([code, region]) => (
             <a href={`/region/${code}`} class="px-3 py-1.5 type-body-md font-medium text-on-dark-mute hover:text-on-primary hover:bg-on-primary/5 rounded-md transition-colors">{region.flag} {region.short}</a>
@@ -50,12 +50,12 @@ import { REGIONS, MARKET_INDICES } from '../lib/regions';
       <div class="flex items-center gap-3">
         <a href="/" class="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 bg-surface-violet-soft text-primary rounded-full type-button-md font-semibold hover:bg-surface-violet-soft/90 transition-colors">
           Track Markets
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
           </svg>
         </a>
-        <button id="mobile-menu-btn" class="md:hidden p-1.5 rounded-md text-on-dark-mute hover:bg-on-primary/10">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <button id="mobile-menu-btn" class="md:hidden p-1.5 rounded-md text-on-dark-mute hover:bg-on-primary/10" aria-label="Toggle navigation menu" aria-expanded="false">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
           </svg>
         </button>
@@ -63,7 +63,7 @@ import { REGIONS, MARKET_INDICES } from '../lib/regions';
     </div>
   </div>
 
-  <div id="mobile-menu" class="hidden md:hidden border-t border-hairline-dark/20 bg-primary">
+  <div id="mobile-menu" class="hidden md:hidden border-t border-hairline-dark/20 bg-primary" role="navigation" aria-label="Mobile navigation">
     <div class="max-w-7xl mx-auto px-4 py-2 space-y-0.5">
       <a href="/" class="block px-3 py-2 type-body-md font-medium text-on-primary bg-on-primary/10 rounded-md">Home</a>
       {Object.entries(REGIONS).map(([code, region]) => (
@@ -77,6 +77,9 @@ import { REGIONS, MARKET_INDICES } from '../lib/regions';
   const btn = document.getElementById('mobile-menu-btn');
   const menu = document.getElementById('mobile-menu');
   if (btn && menu) {
-    btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+    btn.addEventListener('click', () => {
+      const hidden = menu.classList.toggle('hidden');
+      btn.setAttribute('aria-expanded', String(!hidden));
+    });
   }
 </script>

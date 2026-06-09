@@ -20,17 +20,21 @@ const { default: allArticles } = await import('../../data/articles.json');
 const catArticles = allArticles.filter((a: Article) => a.category === categoryInfo.id);
 const featured = catArticles.slice(0, 1);
 const rest = catArticles.slice(1, 25);
+const pageTitle = `${categoryInfo.name} News - MarketPulse`;
+const pageDesc = `Latest ${categoryInfo.name.toLowerCase()} news, analysis, and market data. Track ${categoryInfo.name.toLowerCase()} movements across global markets.`;
 ---
 
 <Base>
   <Fragment slot="header"><Header /></Fragment>
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-10 pb-16 sm:pb-20">
-    <div class="flex items-center gap-2 type-caption text-ink-faint mb-2">
-      <a href="/" class="hover:text-ink transition-colors">Home</a>
-      <span>/</span>
-      <span class="text-ink-mute font-medium">{categoryInfo.name}</span>
-    </div>
+    <nav aria-label="Breadcrumb" class="mb-2">
+      <ol class="flex items-center gap-2 type-caption text-ink-faint">
+        <li><a href="/" class="hover:text-ink transition-colors">Home</a></li>
+        <li aria-hidden="true">/</li>
+        <li aria-current="page" class="text-ink-mute font-medium">{categoryInfo.name}</li>
+      </ol>
+    </nav>
     <div class="flex items-center gap-4 mb-8 sm:mb-10">
       <h1 class="type-display-lg text-ink">{categoryInfo.name}</h1>
       <span class="type-micro text-ink-faint bg-canvas-soft px-2.5 py-1 rounded-full border border-hairline">{catArticles.length} stories</span>
@@ -60,7 +64,7 @@ const rest = catArticles.slice(1, 25);
       </p>
       <a href="/" class="inline-flex items-center gap-2 px-6 py-3 bg-canvas text-surface-teal-deep rounded-md type-button-md font-semibold hover:bg-canvas/90 transition-colors">
         Start Tracking
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
         </svg>
       </a>

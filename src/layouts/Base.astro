@@ -9,16 +9,28 @@
     <meta property="og:title" content="MarketPulse - Financial Markets News" />
     <meta property="og:description" content="Track global markets with real-time financial news, stock market data, commodities prices, ETF analysis, and economic indicators" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="/og-image.png" />
+    <meta property="og:image" content="https://gauravsengar24.github.io/global-news-hub/og-image.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@marketpulse" />
-    <link rel="canonical" href={"https://gauravsengar24.github.io/global-news-hub" + Astro.url.pathname} />
+    <link rel="canonical" content={"https://gauravsengar24.github.io/global-news-hub" + Astro.url.pathname} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
     <link rel="alternate" type="application/rss+xml" title="MarketPulse" href="/rss.xml" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>MarketPulse - Financial Markets News, Stock Quotes, & Market Data</title>
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "MarketPulse",
+      "url": "https://gauravsengar24.github.io/global-news-hub",
+      "description": "Real-time financial market news and analysis covering global stock markets, commodities, ETFs, mutual funds, forex, and economic indicators.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://gauravsengar24.github.io/global-news-hub?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    })} />
   </head>
   <body class="bg-canvas text-ink antialiased">
     <a href="#main-content" class="skip-link">Skip to main content</a>

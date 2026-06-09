@@ -15,17 +15,17 @@ articles.forEach(a => { regionCounts[a.region] = (regionCounts[a.region] || 0) +
 const chartArticles = articles.slice(6, 10);
 ---
 
-<aside class="space-y-5">
+<aside class="space-y-5" aria-label="Sidebar">
   {title && (
     <div class="flex items-center gap-2 mb-1">
-      <div class="w-1 h-4 bg-primary rounded-full"></div>
+      <div class="w-1 h-4 bg-primary rounded-full" aria-hidden="true"></div>
       <h2 class="type-caption font-bold text-ink uppercase tracking-wider">{title}</h2>
-      <div class="flex-1 h-px bg-hairline"></div>
+      <div class="flex-1 h-px bg-hairline" aria-hidden="true"></div>
     </div>
   )}
 
   <!-- Latest Headlines -->
-  <div class="bg-canvas rounded-lg border border-hairline overflow-hidden">
+  <section class="bg-canvas rounded-lg border border-hairline overflow-hidden">
     <div class="px-4 py-3 border-b border-hairline">
       <h3 class="type-micro font-bold text-ink uppercase tracking-wider">Latest Headlines</h3>
     </div>
@@ -37,27 +37,29 @@ const chartArticles = articles.slice(6, 10);
         </a>
       ))}
     </div>
-  </div>
+  </section>
 
   <!-- Trending Stories -->
   {chartArticles.length > 0 && (
-    <div class="bg-canvas rounded-lg border border-hairline overflow-hidden">
+    <section class="bg-canvas rounded-lg border border-hairline overflow-hidden">
       <div class="px-4 py-3 border-b border-hairline">
         <h3 class="type-micro font-bold text-ink uppercase tracking-wider">Trending Now</h3>
       </div>
-      <div class="divide-y divide-hairline">
+      <ol class="divide-y divide-hairline">
         {chartArticles.map((article, i) => (
-          <a href={article.url} target="_blank" rel="noopener noreferrer" class="flex items-start gap-3 px-4 py-2.5 hover:bg-canvas-soft transition-colors">
-            <span class="flex-none w-5 h-5 rounded bg-ink text-on-primary type-micro font-bold flex items-center justify-center mt-0.5">{i + 1}</span>
-            <span class="type-caption font-medium text-ink line-clamp-2">{article.title}</span>
-          </a>
+          <li>
+            <a href={article.url} target="_blank" rel="noopener noreferrer" class="flex items-start gap-3 px-4 py-2.5 hover:bg-canvas-soft transition-colors">
+              <span class="flex-none w-5 h-5 rounded bg-ink text-on-primary type-micro font-bold flex items-center justify-center mt-0.5" aria-hidden="true">{i + 1}</span>
+              <span class="type-caption font-medium text-ink line-clamp-2">{article.title}</span>
+            </a>
+          </li>
         ))}
-      </div>
-    </div>
+      </ol>
+    </section>
   )}
 
   <!-- Sectors -->
-  <div class="bg-canvas rounded-lg border border-hairline overflow-hidden">
+  <section class="bg-canvas rounded-lg border border-hairline overflow-hidden">
     <div class="px-4 py-3 border-b border-hairline">
       <h3 class="type-micro font-bold text-ink uppercase tracking-wider">Sectors</h3>
     </div>
@@ -69,10 +71,10 @@ const chartArticles = articles.slice(6, 10);
         </a>
       ))}
     </div>
-  </div>
+  </section>
 
   <!-- Markets by Region -->
-  <div class="bg-canvas rounded-lg border border-hairline overflow-hidden">
+  <section class="bg-canvas rounded-lg border border-hairline overflow-hidden">
     <div class="px-4 py-3 border-b border-hairline">
       <h3 class="type-micro font-bold text-ink uppercase tracking-wider">Markets</h3>
     </div>
@@ -84,5 +86,5 @@ const chartArticles = articles.slice(6, 10);
         </a>
       ))}
     </div>
-  </div>
+  </section>
 </aside>
