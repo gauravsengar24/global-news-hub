@@ -11,36 +11,29 @@ const CATEGORIES = ['markets', 'stocks', 'commodities', 'etf', 'mutual-funds', '
 
 const RSS_FEEDS = [
   // Global Market News
-  { url: 'https://feeds.content.dowjones.io/public/rss/mw_top_stories', region: 'us', category: 'markets' },
-  { url: 'https://feeds.content.dowjones.io/public/rss/mw_market_pulse', region: 'us', category: 'markets' },
+  { url: 'https://feeds.marketwatch.com/marketwatch/topstories', region: 'us', category: 'markets' },
+  { url: 'https://feeds.marketwatch.com/marketwatch/marketpulse', region: 'us', category: 'markets' },
   { url: 'https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=100003114', region: 'us', category: 'markets' },
   // Stocks
   { url: 'https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=10000664', region: 'us', category: 'stocks' },
-  { url: 'https://feeds.content.dowjones.io/public/rss/mw_stocks', region: 'us', category: 'stocks' },
+  { url: 'https://feeds.marketwatch.com/marketwatch/stocks', region: 'us', category: 'stocks' },
   { url: 'https://finance.yahoo.com/news/rssindex', region: 'us', category: 'stocks' },
   // Commodities
   { url: 'https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=10000100', region: 'us', category: 'commodities' },
-  { url: 'https://feeds.content.dowjones.io/public/rss/mw_commodities', region: 'us', category: 'commodities' },
+  { url: 'https://feeds.marketwatch.com/marketwatch/commodities', region: 'us', category: 'commodities' },
   // ETFs
-  { url: 'https://feeds.content.dowjones.io/public/rss/mw_etfs', region: 'us', category: 'etf' },
-  { url: 'https://www.etftrends.com/feed/', region: 'us', category: 'etf' },
+  { url: 'https://feeds.marketwatch.com/marketwatch/etfs', region: 'us', category: 'etf' },
   // Mutual Funds
-  { url: 'https://www.morningstar.com/feed/mutual-fund-news', region: 'us', category: 'mutual-funds' },
-  { url: 'https://feeds.content.dowjones.io/public/rss/mw_funds', region: 'us', category: 'mutual-funds' },
+  { url: 'https://feeds.marketwatch.com/marketwatch/funds', region: 'us', category: 'mutual-funds' },
   // Forex
   { url: 'https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=10000671', region: 'us', category: 'forex' },
-  { url: 'https://feeds.content.dowjones.io/public/rss/mw_currencies', region: 'us', category: 'forex' },
   // Economy
   { url: 'https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=10000115', region: 'us', category: 'economy' },
-  { url: 'https://feeds.content.dowjones.io/public/rss/mw_economy_calendar', region: 'us', category: 'economy' },
-  // Futures
-  { url: 'https://feeds.content.dowjones.io/public/rss/mw_futures', region: 'us', category: 'futures' },
   // UK / Europe Markets
   { url: 'https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=10000738', region: 'gb', category: 'markets' },
-  { url: 'https://www.ft.com/rss/home', region: 'gb', category: 'markets' },
-  { url: 'https://www.ft.com/rss/markets', region: 'gb', category: 'markets' },
-  { url: 'https://www.ft.com/rss/companies/financials', region: 'gb', category: 'stocks' },
-  { url: 'https://www.ft.com/rss/commodities', region: 'gb', category: 'commodities' },
+  { url: 'https://www.theguardian.com/business/economics/rss', region: 'gb', category: 'economy' },
+  { url: 'https://www.theguardian.com/business/stock-markets/rss', region: 'gb', category: 'markets' },
+  { url: 'https://www.telegraph.co.uk/business/rss.xml', region: 'gb', category: 'markets' },
   // India Markets
   { url: 'https://economictimes.indiatimes.com/markets/rssfeeds/1977021501.cms', region: 'in', category: 'markets' },
   { url: 'https://economictimes.indiatimes.com/markets/stocks/rssfeeds/2146842.cms', region: 'in', category: 'stocks' },
@@ -49,7 +42,7 @@ const RSS_FEEDS = [
   { url: 'https://economictimes.indiatimes.com/news/economy/rssfeeds/1378982.cms', region: 'in', category: 'economy' },
   // Japan Markets
   { url: 'https://www3.nhk.or.jp/rss/news/cat4.xml', region: 'jp', category: 'markets' },
-  { url: 'https://www.japantimes.co.jp/feed/top-stories', region: 'jp', category: 'markets' },
+  { url: 'https://www3.nhk.or.jp/rss/news/cat3.xml', region: 'jp', category: 'economy' },
   // China Markets
   { url: 'https://www.chinadaily.com.cn/rss/business_news.rss', region: 'cn', category: 'markets' },
   { url: 'https://www.chinadaily.com.cn/rss/world_news.rss', region: 'cn', category: 'economy' },
@@ -57,7 +50,7 @@ const RSS_FEEDS = [
   { url: 'https://www.abc.net.au/news/feed/51260/rss.xml', region: 'au', category: 'markets' },
   { url: 'https://www.abc.net.au/news/feed/51240/rss.xml', region: 'au', category: 'economy' },
   // Emerging Markets
-  { url: 'https://www.ft.com/rss/emerging-markets', region: 'em', category: 'markets' },
+  { url: 'https://www.theguardian.com/world/feed', region: 'em', category: 'markets' },
   // General Business News (broader coverage)
   { url: 'https://feeds.bbci.co.uk/news/business/rss.xml', region: 'gb', category: 'economy' },
   { url: 'https://feeds.bbci.co.uk/news/technology/rss.xml', region: 'gb', category: 'markets' },
@@ -65,12 +58,8 @@ const RSS_FEEDS = [
   { url: 'https://rss.nytimes.com/services/xml/rss/nyt/Economy.xml', region: 'us', category: 'economy' },
   { url: 'https://www.euronews.com/rss/business', region: 'gb', category: 'economy' },
   // Additional financial news
-  { url: 'https://www.investing.com/rss/news.rss', region: 'us', category: 'markets' },
-  { url: 'https://www.investing.com/rss/market_overview.rss', region: 'us', category: 'markets' },
-  { url: 'https://www.investing.com/rss/commodities.rss', region: 'us', category: 'commodities' },
-  { url: 'https://www.investing.com/rss/forex.rss', region: 'us', category: 'forex' },
-  { url: 'https://www.investing.com/rss/etfs.rss', region: 'us', category: 'etf' },
-  { url: 'https://www.investing.com/rss/mutual_funds.rss', region: 'us', category: 'mutual-funds' },
+  { url: 'https://seekingalpha.com/feed.xml', region: 'us', category: 'markets' },
+  { url: 'https://seekingalpha.com/market_currents.xml', region: 'us', category: 'markets' },
 ];
 
 function parseFeedItem(item) {
