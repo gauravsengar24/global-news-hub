@@ -7,9 +7,10 @@ export interface Props {
   };
   featured?: boolean;
   horizontal?: boolean;
+  compact?: boolean;
 }
 
-const { article, featured, horizontal } = Astro.props;
+const { article, featured, horizontal, compact } = Astro.props;
 const hostname = article.url ? new URL(article.url).hostname.replace('www.', '') : article.source;
 const regionLabels = { us: 'US', gb: 'EU', in: 'IN', jp: 'JP', cn: 'CN', au: 'AU', em: 'EM' };
 
@@ -32,51 +33,71 @@ const regionColors: Record<string, string> = {
 ---
 
 <article class:list={[
-  'group bg-canvas rounded-lg overflow-hidden border border-hairline card-hover',
-  featured ? 'lg:col-span-2 lg:row-span-2' : '',
-  horizontal ? 'flex flex-row' : '',
+  'group',
+  featured ? 'bg-canvas rounded-lg overflow-hidden border border-hairline card-hover' : '',
+  horizontal ? 'flex flex-row gap-4' : '',
+  compact ? 'flex flex-row gap-3 items-start' : '',
 ]}>
-  <a href={article.url} target="_blank" rel="noopener noreferrer" class={horizontal ? 'flex w-full' : 'block h-full'}>
+  <a href={article.url} target="_blank" rel="noopener noreferrer" class={featured || horizontal || compact ? 'flex w-full' : 'block group'}>
+    {(featured || horizontal) && (
+      <div class:list={[
+        'relative overflow-hidden bg-canvas-soft flex-shrink-0',
+        featured ? 'h-56 sm:h-72 lg:h-80' : horizontal ? 'w-40 h-full min-h-[100px]' : '',
+        featured ? 'rounded-t-lg' : 'rounded-lg',
+      ]}>
+        {article.image ? (
+          <img src={article.image} alt={article.title} width={featured ? 800 : 320} height={featured ? 480 : 200}
+            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async" />
+        ) : (
+          <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-canvas-soft to-hairline/50" aria-hidden="true">
+            <svg class="w-8 h-8 text-ink-faint" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+            </svg>
+          </div>
+        )}
+        <div class="absolute top-2 left-2 flex gap-1.5" aria-hidden="true">
+          <span class={`px-2 py-0.5 type-micro font-bold uppercase tracking-wider rounded ${categoryColors[article.category] || 'bg-canvas-soft text-ink-mute'}`}>
+            {article.category}
+          </span>
+        </div>
+      </div>
+    )}
     <div class:list={[
-      'relative overflow-hidden bg-canvas-soft flex-shrink-0',
-      featured ? 'h-64 sm:h-80 lg:h-96' : horizontal ? 'w-48 h-full min-h-[120px]' : 'h-44 sm:h-48',
+      'flex flex-col justify-center flex-1 min-w-0',
+      featured ? 'p-4 sm:p-5' : '',
+      compact ? 'py-1' : '',
     ]}>
-      {article.image ? (
-        <img src={article.image} alt={article.title} width={featured ? 800 : horizontal ? 240 : 400} height={featured ? 480 : horizontal ? 180 : 240}
-          class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async" />
-      ) : (
-        <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-canvas-soft to-hairline/50" aria-hidden="true">
-          <svg class="w-10 h-10 text-ink-faint" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      {!featured && !horizontal && !compact && article.image && (
+        <div class="relative overflow-hidden bg-canvas-soft rounded-lg mb-2.5 h-40 sm:h-44">
+          <img src={article.image} alt={article.title} width={400} height={240}
+            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async" />
+          <div class="absolute top-2 left-2 flex gap-1.5" aria-hidden="true">
+            <span class={`px-2 py-0.5 type-micro font-bold uppercase tracking-wider rounded ${categoryColors[article.category] || 'bg-canvas-soft text-ink-mute'}`}>
+              {article.category}
+            </span>
+          </div>
+        </div>
+      )}
+      {!featured && !horizontal && !compact && !article.image && (
+        <div class="h-40 sm:h-44 rounded-lg mb-2.5 flex items-center justify-center bg-gradient-to-br from-canvas-soft to-hairline/50" aria-hidden="true">
+          <svg class="w-8 h-8 text-ink-faint" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
           </svg>
         </div>
       )}
-      <div class="absolute top-2.5 left-2.5 flex gap-1.5" aria-hidden="true">
-        <span class={`px-2 py-0.5 type-micro font-bold uppercase tracking-wider rounded ${categoryColors[article.category] || 'bg-canvas-soft text-ink-mute'}`}>
-          {article.category}
-        </span>
-        <span class={`px-2 py-0.5 type-micro font-semibold rounded ${regionColors[article.region] || 'bg-canvas-soft text-ink-mute'}`}>
-          {regionLabels[article.region] || article.region?.toUpperCase()}
-        </span>
-      </div>
-    </div>
-    <div class:list={[
-      'flex flex-col justify-center',
-      featured ? 'p-5 sm:p-6' : horizontal ? 'p-3.5 flex-1 min-w-0' : 'p-4',
-    ]}>
-      <div class="flex items-center gap-2 type-micro text-ink-faint mb-1.5">
+      <div class="flex items-center gap-2 type-micro text-ink-faint mb-1">
         <span class="font-medium text-ink-mute truncate max-w-[120px]">{hostname}</span>
         <span aria-hidden="true">·</span>
         <time datetime={article.publishedAt} class="whitespace-nowrap">{timeAgo(article.publishedAt)}</time>
       </div>
       <h3 class:list={[
         'font-semibold text-ink leading-snug group-hover:text-primary transition-colors',
-        featured ? 'type-display-lg' : 'type-body-md',
+        featured ? 'type-display-lg' : compact ? 'type-caption font-medium leading-snug' : 'type-body-md',
       ]}>
         {article.title}
       </h3>
       {(featured || horizontal) && article.description && (
-        <p class="mt-2 type-caption text-ink-mute line-clamp-2 leading-relaxed">{article.description}</p>
+        <p class="mt-1.5 type-caption text-ink-mute line-clamp-2 leading-relaxed">{article.description}</p>
       )}
     </div>
   </a>
