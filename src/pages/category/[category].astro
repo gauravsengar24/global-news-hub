@@ -24,28 +24,48 @@ const rest = catArticles.slice(1, 25);
 
 <Base>
   <Fragment slot="header"><Header /></Fragment>
-  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8 pb-16">
-    <div class="flex items-center gap-3 mb-2">
-      <a href="/" class="text-sm text-gray-400 hover:text-emerald-600 transition-colors">Home</a>
-      <span class="text-gray-300">/</span>
-      <span class="text-sm text-gray-600 font-medium">{categoryInfo.name}</span>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-10 pb-16 sm:pb-20">
+    <div class="flex items-center gap-2 type-caption text-ink-faint mb-2">
+      <a href="/" class="hover:text-ink transition-colors">Home</a>
+      <span>/</span>
+      <span class="text-ink-mute font-medium">{categoryInfo.name}</span>
     </div>
-    <div class="flex items-center gap-3 mb-8">
-      <h1 class="text-2xl sm:text-3xl lg:text-4xl font-black text-gray-900 tracking-tight">{categoryInfo.name}</h1>
-      <span class="text-xs text-gray-400 bg-gray-100 px-2.5 py-1 rounded-full">{catArticles.length} stories</span>
+    <div class="flex items-center gap-4 mb-8 sm:mb-10">
+      <h1 class="type-display-lg text-ink">{categoryInfo.name}</h1>
+      <span class="type-micro text-ink-faint bg-canvas-soft px-2.5 py-1 rounded-full border border-hairline">{catArticles.length} stories</span>
     </div>
-    <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-10">
       <div class="lg:col-span-3">
         {featured.length > 0 && <div class="mb-8"><NewsCard article={featured[0]} featured={true} /></div>}
         <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
           {rest.map((article) => (<NewsCard article={article} />))}
         </div>
-        {rest.length === 0 && <div class="text-center py-16"><p class="text-gray-400 text-lg">No news in this sector yet.</p></div>}
+        {rest.length === 0 && <div class="text-center py-16"><p class="type-body-lg text-ink-faint">No news in this sector yet.</p></div>}
       </div>
       <div class="lg:col-span-1">
         <Sidebar articles={allArticles} />
       </div>
     </div>
+  </div>
+
+  <!-- Closing Teal Band -->
+  <section class="bg-surface-teal-deep border-t border-surface-teal-mid/30">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 text-center">
+      <h2 class="type-display-lg text-on-primary mb-4 sm:mb-6">
+        Stay Ahead of the Markets
+      </h2>
+      <p class="type-body-lg text-on-dark-mute max-w-xl mx-auto mb-8 sm:mb-10">
+        Get real-time financial news, market data, and analysis delivered to your feed.
+      </p>
+      <a href="/" class="inline-flex items-center gap-2 px-6 py-3 bg-canvas text-surface-teal-deep rounded-md type-button-md font-semibold hover:bg-canvas/90 transition-colors">
+        Start Tracking
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+        </svg>
+      </a>
+    </div>
   </section>
+
   <Fragment slot="footer"><Footer /></Fragment>
 </Base>

@@ -15,24 +15,25 @@ articles.forEach(a => { regionCounts[a.region] = (regionCounts[a.region] || 0) +
 const chartArticles = articles.slice(6, 10);
 ---
 
-<aside class="space-y-4">
+<aside class="space-y-5">
   {title && (
     <div class="flex items-center gap-2 mb-1">
-      <h2 class="text-sm font-bold text-market-dark uppercase tracking-wider">{title}</h2>
-      <div class="flex-1 h-px bg-market-border"></div>
+      <div class="w-1 h-4 bg-primary rounded-full"></div>
+      <h2 class="type-caption font-bold text-ink uppercase tracking-wider">{title}</h2>
+      <div class="flex-1 h-px bg-hairline"></div>
     </div>
   )}
 
   <!-- Latest Headlines -->
-  <div class="bg-white rounded-lg border border-market-border overflow-hidden">
-    <div class="px-4 py-3 border-b border-market-border">
-      <h3 class="text-xs font-bold text-market-dark uppercase tracking-wider">Latest Headlines</h3>
+  <div class="bg-canvas rounded-lg border border-hairline overflow-hidden">
+    <div class="px-4 py-3 border-b border-hairline">
+      <h3 class="type-micro font-bold text-ink uppercase tracking-wider">Latest Headlines</h3>
     </div>
-    <div class="divide-y divide-market-border">
+    <div class="divide-y divide-hairline">
       {latestArticles.map((article) => (
-        <a href={article.url} target="_blank" rel="noopener noreferrer" class="block px-4 py-2.5 hover:bg-market-bg transition-colors">
-          <h4 class="text-[13px] font-medium text-market-dark line-clamp-2 leading-snug">{article.title}</h4>
-          <time class="text-[11px] text-market-text-muted mt-0.5 block">{formatDate(article.publishedAt)}</time>
+        <a href={article.url} target="_blank" rel="noopener noreferrer" class="block px-4 py-2.5 hover:bg-canvas-soft transition-colors">
+          <h4 class="type-caption font-medium text-ink line-clamp-2 leading-snug">{article.title}</h4>
+          <time class="type-micro text-ink-faint mt-0.5 block">{formatDate(article.publishedAt)}</time>
         </a>
       ))}
     </div>
@@ -40,15 +41,15 @@ const chartArticles = articles.slice(6, 10);
 
   <!-- Trending Stories -->
   {chartArticles.length > 0 && (
-    <div class="bg-white rounded-lg border border-market-border overflow-hidden">
-      <div class="px-4 py-3 border-b border-market-border">
-        <h3 class="text-xs font-bold text-market-dark uppercase tracking-wider">Trending Now</h3>
+    <div class="bg-canvas rounded-lg border border-hairline overflow-hidden">
+      <div class="px-4 py-3 border-b border-hairline">
+        <h3 class="type-micro font-bold text-ink uppercase tracking-wider">Trending Now</h3>
       </div>
-      <div class="divide-y divide-market-border">
+      <div class="divide-y divide-hairline">
         {chartArticles.map((article, i) => (
-          <a href={article.url} target="_blank" rel="noopener noreferrer" class="flex items-start gap-3 px-4 py-2.5 hover:bg-market-bg transition-colors">
-            <span class="flex-none w-5 h-5 rounded bg-market-dark text-white text-[10px] font-bold flex items-center justify-center mt-0.5">{i + 1}</span>
-            <span class="text-[13px] font-medium text-market-dark line-clamp-2">{article.title}</span>
+          <a href={article.url} target="_blank" rel="noopener noreferrer" class="flex items-start gap-3 px-4 py-2.5 hover:bg-canvas-soft transition-colors">
+            <span class="flex-none w-5 h-5 rounded bg-ink text-on-primary type-micro font-bold flex items-center justify-center mt-0.5">{i + 1}</span>
+            <span class="type-caption font-medium text-ink line-clamp-2">{article.title}</span>
           </a>
         ))}
       </div>
@@ -56,30 +57,30 @@ const chartArticles = articles.slice(6, 10);
   )}
 
   <!-- Sectors -->
-  <div class="bg-white rounded-lg border border-market-border overflow-hidden">
-    <div class="px-4 py-3 border-b border-market-border">
-      <h3 class="text-xs font-bold text-market-dark uppercase tracking-wider">Sectors</h3>
+  <div class="bg-canvas rounded-lg border border-hairline overflow-hidden">
+    <div class="px-4 py-3 border-b border-hairline">
+      <h3 class="type-micro font-bold text-ink uppercase tracking-wider">Sectors</h3>
     </div>
     <div class="p-2">
       {CATEGORIES.map((cat) => (
-        <a href={`/category/${cat.id}`} class="flex items-center justify-between px-3 py-2 rounded-md text-[13px] text-market-text-secondary hover:bg-market-bg hover:text-market-dark transition-colors">
+        <a href={`/category/${cat.id}`} class="flex items-center justify-between px-3 py-2 rounded-md type-caption text-ink-mute hover:bg-canvas-soft hover:text-ink transition-colors">
           <span>{cat.icon} {cat.name}</span>
-          <span class="text-[11px] text-market-text-muted bg-market-bg px-1.5 py-0.5 rounded">{categoryCounts[cat.id] || 0}</span>
+          <span class="type-micro text-ink-faint bg-canvas-soft px-1.5 py-0.5 rounded">{categoryCounts[cat.id] || 0}</span>
         </a>
       ))}
     </div>
   </div>
 
   <!-- Markets by Region -->
-  <div class="bg-white rounded-lg border border-market-border overflow-hidden">
-    <div class="px-4 py-3 border-b border-market-border">
-      <h3 class="text-xs font-bold text-market-dark uppercase tracking-wider">Markets</h3>
+  <div class="bg-canvas rounded-lg border border-hairline overflow-hidden">
+    <div class="px-4 py-3 border-b border-hairline">
+      <h3 class="type-micro font-bold text-ink uppercase tracking-wider">Markets</h3>
     </div>
     <div class="p-2">
       {Object.entries({ us: '🇺🇸 US', gb: '🇪🇺 Europe', in: '🇮🇳 India', jp: '🇯🇵 Japan', cn: '🇨🇳 China', au: '🇦🇺 Australia', em: '🌏 Emerging' }).map(([code, label]) => (
-        <a href={`/region/${code}`} class="flex items-center justify-between px-3 py-2 rounded-md text-[13px] text-market-text-secondary hover:bg-market-bg hover:text-market-dark transition-colors">
+        <a href={`/region/${code}`} class="flex items-center justify-between px-3 py-2 rounded-md type-caption text-ink-mute hover:bg-canvas-soft hover:text-ink transition-colors">
           <span>{label}</span>
-          <span class="text-[11px] text-market-text-muted bg-market-bg px-1.5 py-0.5 rounded">{regionCounts[code] || 0}</span>
+          <span class="type-micro text-ink-faint bg-canvas-soft px-1.5 py-0.5 rounded">{regionCounts[code] || 0}</span>
         </a>
       ))}
     </div>

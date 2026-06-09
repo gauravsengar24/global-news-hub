@@ -3,19 +3,19 @@ import { REGIONS, MARKET_INDICES } from '../lib/regions';
 ---
 
 <!-- Ticker Bar -->
-<div class="bg-market-navy text-white overflow-hidden border-b border-gray-800">
+<div class="bg-primary-deep text-on-primary overflow-hidden border-b border-hairline-dark/30">
   <div class="flex">
-    <div class="flex-none flex items-center gap-2 bg-market-navy px-4 py-1.5 z-10 relative">
+    <div class="flex-none flex items-center gap-2 bg-primary-deep px-4 py-1.5 z-10 relative">
       <span class="market-open-dot"></span>
-      <span class="text-[11px] font-semibold uppercase tracking-wider text-gray-400">Markets</span>
+      <span class="type-micro font-semibold uppercase tracking-wider text-on-dark-mute">Markets</span>
     </div>
     <div class="overflow-hidden relative flex-1">
       <div class="flex animate-ticker gap-0 py-1.5">
         {[...MARKET_INDICES, ...MARKET_INDICES].map((idx, i) => (
-          <a key={i} href={`/region/${idx.region}`} class="flex-none flex items-center gap-2.5 px-4 border-r border-gray-700/50 hover:bg-market-nav-hover transition-colors group">
-            <span class="text-[12px] font-semibold text-gray-300 group-hover:text-white">{idx.name}</span>
-            <span class="text-[12px] font-medium text-gray-400">{idx.value}</span>
-            <span class={`text-[11px] font-semibold ${idx.up ? 'text-positive' : 'text-negative'}`}>
+          <a key={i} href={`/region/${idx.region}`} class="flex-none flex items-center gap-2.5 px-4 border-r border-hairline-dark/20 hover:bg-primary/50 transition-colors group">
+            <span class="type-micro font-semibold text-on-dark-mute group-hover:text-on-primary">{idx.name}</span>
+            <span class="type-micro text-on-dark-faint">{idx.value}</span>
+            <span class={`type-micro font-semibold ${idx.up ? 'text-positive' : 'text-negative'}`}>
               {idx.up ? '▲' : '▼'} {idx.change}
             </span>
           </a>
@@ -25,34 +25,36 @@ import { REGIONS, MARKET_INDICES } from '../lib/regions';
   </div>
 </div>
 
-<!-- Header -->
-<header class="sticky top-0 z-50 bg-white border-b border-market-border shadow-sm">
+<!-- Nav Bar Dark -->
+<header class="sticky top-0 z-50 bg-primary border-b border-hairline-dark/20">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-12">
       <div class="flex items-center gap-6">
         <a href="/" class="flex items-center gap-1.5 group flex-shrink-0">
-          <svg class="w-7 h-7 text-market-blue" viewBox="0 0 24 24" fill="currentColor">
+          <svg class="w-7 h-7 text-surface-violet-soft" viewBox="0 0 24 24" fill="currentColor">
             <path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
           </svg>
-          <span class="text-lg font-extrabold text-market-dark tracking-tight">
-            Market<span class="text-market-blue">Pulse</span>
+          <span class="text-lg font-bold text-on-primary tracking-tight" style="font-weight:540">
+            Market<span class="text-surface-violet-soft">Pulse</span>
           </span>
         </a>
 
         <nav class="hidden md:flex items-center gap-0.5">
-          <a href="/" class="px-3 py-1.5 text-[13px] font-medium text-market-dark bg-gray-100 rounded-md">Home</a>
+          <a href="/" class="px-3 py-1.5 type-body-md font-medium text-on-primary bg-on-primary/10 rounded-md">Home</a>
           {Object.entries(REGIONS).map(([code, region]) => (
-            <a href={`/region/${code}`} class="px-3 py-1.5 text-[13px] font-medium text-market-text-secondary hover:text-market-dark hover:bg-gray-50 rounded-md transition-colors">{region.flag} {region.short}</a>
+            <a href={`/region/${code}`} class="px-3 py-1.5 type-body-md font-medium text-on-dark-mute hover:text-on-primary hover:bg-on-primary/5 rounded-md transition-colors">{region.flag} {region.short}</a>
           ))}
         </nav>
       </div>
 
       <div class="flex items-center gap-3">
-        <div class="hidden sm:flex items-center gap-1.5 text-[11px] text-market-text-muted">
-          <span class="market-open-dot"></span>
-          <span>Market Open</span>
-        </div>
-        <button id="mobile-menu-btn" class="md:hidden p-1.5 rounded-md text-market-text-secondary hover:bg-gray-100">
+        <a href="/" class="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 bg-surface-violet-soft text-primary rounded-full type-button-md font-semibold hover:bg-surface-violet-soft/90 transition-colors">
+          Track Markets
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+          </svg>
+        </a>
+        <button id="mobile-menu-btn" class="md:hidden p-1.5 rounded-md text-on-dark-mute hover:bg-on-primary/10">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
           </svg>
@@ -61,11 +63,11 @@ import { REGIONS, MARKET_INDICES } from '../lib/regions';
     </div>
   </div>
 
-  <div id="mobile-menu" class="hidden md:hidden border-t border-market-border bg-white">
+  <div id="mobile-menu" class="hidden md:hidden border-t border-hairline-dark/20 bg-primary">
     <div class="max-w-7xl mx-auto px-4 py-2 space-y-0.5">
-      <a href="/" class="block px-3 py-2 text-sm font-medium text-market-dark bg-gray-50 rounded-md">Home</a>
+      <a href="/" class="block px-3 py-2 type-body-md font-medium text-on-primary bg-on-primary/10 rounded-md">Home</a>
       {Object.entries(REGIONS).map(([code, region]) => (
-        <a href={`/region/${code}`} class="block px-3 py-2 text-sm text-market-text-secondary hover:bg-gray-50 rounded-md">{region.flag} {region.name}</a>
+        <a href={`/region/${code}`} class="block px-3 py-2 type-body-md text-on-dark-mute hover:bg-on-primary/10 rounded-md">{region.flag} {region.name}</a>
       ))}
     </div>
   </div>

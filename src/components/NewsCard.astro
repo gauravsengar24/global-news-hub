@@ -13,49 +13,49 @@ const { article, featured, horizontal } = Astro.props;
 const hostname = article.url ? new URL(article.url).hostname.replace('www.', '') : article.source;
 const regionLabels = { us: 'US', gb: 'EU', in: 'IN', jp: 'JP', cn: 'CN', au: 'AU', em: 'EM' };
 
-const categoryColors = {
-  markets: 'bg-blue-100 text-blue-700',
-  stocks: 'bg-indigo-100 text-indigo-700',
-  commodities: 'bg-amber-100 text-amber-700',
-  etf: 'bg-purple-100 text-purple-700',
-  'mutual-funds': 'bg-teal-100 text-teal-700',
-  forex: 'bg-cyan-100 text-cyan-700',
-  economy: 'bg-emerald-100 text-emerald-700',
-  futures: 'bg-rose-100 text-rose-700',
+const categoryColors: Record<string, string> = {
+  markets: 'bg-surface-violet-soft/20 text-primary',
+  stocks: 'bg-[#e8eefb] text-[#1a4b8c]',
+  commodities: 'bg-[#fef3c7] text-[#92400e]',
+  etf: 'bg-[#f0e8ff] text-[#5b21b6]',
+  'mutual-funds': 'bg-[#ccfbf1] text-[#0f766e]',
+  forex: 'bg-[#cffafe] text-[#0e7490]',
+  economy: 'bg-[#d1fae5] text-[#065f46]',
+  futures: 'bg-[#ffe4e6] text-[#9f1239]',
 };
-const regionColors = {
-  us: 'bg-gray-100 text-gray-600', gb: 'bg-blue-50 text-blue-600',
-  in: 'bg-orange-50 text-orange-600', jp: 'bg-red-50 text-red-600',
-  cn: 'bg-yellow-50 text-yellow-700', au: 'bg-green-50 text-green-600',
-  em: 'bg-violet-50 text-violet-600',
+const regionColors: Record<string, string> = {
+  us: 'bg-[#f3f4f6] text-[#4b5563]', gb: 'bg-[#eff6ff] text-[#1d4ed8]',
+  in: 'bg-[#fff7ed] text-[#c2410c]', jp: 'bg-[#fef2f2] text-[#dc2626]',
+  cn: 'bg-[#fefce8] text-[#a16207]', au: 'bg-[#f0fdf4] text-[#16a34a]',
+  em: 'bg-[#f5f3ff] text-[#7c3aed]',
 };
 ---
 
 <article class:list={[
-  'group bg-white rounded-lg overflow-hidden border border-market-border card-hover',
+  'group bg-canvas rounded-lg overflow-hidden border border-hairline card-hover',
   featured ? 'lg:col-span-2 lg:row-span-2' : '',
   horizontal ? 'flex flex-row' : '',
 ]}>
   <a href={article.url} target="_blank" rel="noopener noreferrer" class={horizontal ? 'flex w-full' : 'block h-full'}>
     <div class:list={[
-      'relative overflow-hidden bg-gray-100 flex-shrink-0',
+      'relative overflow-hidden bg-canvas-soft flex-shrink-0',
       featured ? 'h-64 sm:h-80 lg:h-96' : horizontal ? 'w-48 h-full min-h-[120px]' : 'h-44 sm:h-48',
     ]}>
       {article.image ? (
         <img src={article.image} alt={article.title}
           class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
       ) : (
-        <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100">
-          <svg class="w-10 h-10 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-canvas-soft to-hairline/50">
+          <svg class="w-10 h-10 text-ink-faint" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
           </svg>
         </div>
       )}
       <div class="absolute top-2.5 left-2.5 flex gap-1.5">
-        <span class={`px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider rounded ${categoryColors[article.category] || 'bg-gray-100 text-gray-600'}`}>
+        <span class={`px-2 py-0.5 type-micro font-bold uppercase tracking-wider rounded ${categoryColors[article.category] || 'bg-canvas-soft text-ink-mute'}`}>
           {article.category}
         </span>
-        <span class={`px-2 py-0.5 text-[10px] font-semibold rounded ${regionColors[article.region] || 'bg-gray-100 text-gray-600'}`}>
+        <span class={`px-2 py-0.5 type-micro font-semibold rounded ${regionColors[article.region] || 'bg-canvas-soft text-ink-mute'}`}>
           {regionLabels[article.region] || article.region?.toUpperCase()}
         </span>
       </div>
@@ -64,19 +64,19 @@ const regionColors = {
       'flex flex-col justify-center',
       featured ? 'p-5 sm:p-6' : horizontal ? 'p-3.5 flex-1 min-w-0' : 'p-4',
     ]}>
-      <div class="flex items-center gap-2 text-[11px] text-market-text-muted mb-1.5">
-        <span class="font-medium text-market-text-secondary truncate max-w-[120px]">{hostname}</span>
+      <div class="flex items-center gap-2 type-micro text-ink-faint mb-1.5">
+        <span class="font-medium text-ink-mute truncate max-w-[120px]">{hostname}</span>
         <span>·</span>
         <time datetime={article.publishedAt} class="whitespace-nowrap">{timeAgo(article.publishedAt)}</time>
       </div>
       <h3 class:list={[
-        'font-semibold text-market-dark leading-snug group-hover:text-market-blue transition-colors',
-        featured ? 'text-xl sm:text-2xl lg:text-3xl' : 'text-sm sm:text-base',
+        'font-semibold text-ink leading-snug group-hover:text-primary transition-colors',
+        featured ? 'type-display-lg' : 'type-body-md',
       ]}>
         {article.title}
       </h3>
       {(featured || horizontal) && article.description && (
-        <p class="mt-2 text-sm text-market-text-secondary line-clamp-2 leading-relaxed">{article.description}</p>
+        <p class="mt-2 type-caption text-ink-mute line-clamp-2 leading-relaxed">{article.description}</p>
       )}
     </div>
   </a>

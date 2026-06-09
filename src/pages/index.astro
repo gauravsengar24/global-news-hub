@@ -4,7 +4,7 @@ import Header from '../components/Header.astro';
 import NewsCard from '../components/NewsCard.astro';
 import Footer from '../components/Footer.astro';
 import Sidebar from '../components/Sidebar.astro';
-import { REGIONS, formatDate, MARKET_INDICES, CATEGORIES } from '../lib/regions';
+import { REGIONS, formatDate, CATEGORIES } from '../lib/regions';
 import type { Article } from '../lib/types';
 
 const { default: articles } = await import('../data/articles.json');
@@ -27,168 +27,207 @@ Object.keys(REGIONS).forEach(code => {
 <Base>
   <Fragment slot="header"><Header /></Fragment>
 
-  <!-- Market Indices Summary -->
-  <section class="bg-white border-b border-market-border">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-      <div class="flex items-center gap-1 mb-2.5">
-        <span class="text-[11px] font-bold uppercase text-market-text-muted tracking-wider">Market Summary</span>
-        <span class="text-[11px] text-market-text-muted">· Updated {formatDate(meta.updatedAt)}</span>
+  <!-- Hero Canvas — Indigo Navy with Violet-Sky Atmospheric Backdrop -->
+  <section class="relative overflow-hidden bg-primary">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-20%,#c9b4fa_0%,#6d5bb0_30%,#1b1938_60%,#0e0c1f_100%)] animate-[hero-atmosphere_8s_ease-in-out_infinite]"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_80%_80%,rgba(201,180,250,0.15)_0%,transparent_60%)]"></div>
+    <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32 lg:py-40">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 bg-surface-violet-soft/15 rounded-full border border-surface-violet-soft/20 mb-6">
+          <span class="w-1.5 h-1.5 bg-positive rounded-full"></span>
+          <span class="type-micro font-semibold text-surface-violet-soft tracking-wider uppercase">Markets Open · Real-Time Data</span>
+        </div>
+        <h1 class="type-display-xxl text-on-primary mb-6 sm:mb-8 tracking-tight">
+          Track Global Markets<br/>
+          <span class="text-surface-violet-soft">In Real Time</span>
+        </h1>
+        <p class="type-body-lg text-on-dark-mute max-w-2xl mb-8 sm:mb-10">
+          Real-time financial market news and analysis covering global stock markets, commodities, ETFs, mutual funds, forex, and economic indicators that move global markets.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <a href="#markets" class="inline-flex items-center gap-2 px-6 py-3 bg-surface-violet-soft text-primary rounded-full type-button-md font-semibold hover:bg-surface-violet-soft/90 transition-colors">
+            Explore Markets
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </a>
+          <a href="#latest" class="inline-flex items-center gap-2 px-6 py-3 border border-on-dark-mute/30 text-on-primary rounded-full type-button-md font-semibold hover:bg-on-primary/10 transition-colors">
+            Latest Stories
+          </a>
+        </div>
       </div>
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2.5">
-        <a href="/region/us" class="bg-market-bg rounded-lg px-3 py-2.5 hover:bg-gray-100 transition-colors">
-          <div class="text-[11px] text-market-text-muted font-medium">S&P 500</div>
-          <div class="text-sm font-bold text-market-dark mt-0.5">5,432.15</div>
-          <div class="text-[11px] font-semibold text-positive">▲ +0.84%</div>
+    </div>
+    <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-surface-violet-soft/30 to-transparent"></div>
+  </section>
+
+  <!-- Market Indices — Feature Row on Canvas-Soft -->
+  <section id="markets" class="bg-canvas-soft border-b border-hairline">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-1 h-5 bg-primary rounded-full"></div>
+        <span class="type-caption font-semibold text-ink-mute uppercase tracking-wider">Market Summary</span>
+        <span class="type-caption text-ink-faint">· Updated {formatDate(meta.updatedAt)}</span>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+        <a href="/region/us" class="bg-canvas rounded-lg px-4 py-3 hover:shadow-[var(--elevation-1)] transition-shadow border border-hairline">
+          <div class="type-micro text-ink-mute font-medium">S&P 500</div>
+          <div class="text-sm font-bold text-ink mt-0.5" style="font-weight:540">5,432.15</div>
+          <div class="type-micro font-semibold text-positive">▲ +0.84%</div>
         </a>
-        <a href="/region/us" class="bg-market-bg rounded-lg px-3 py-2.5 hover:bg-gray-100 transition-colors">
-          <div class="text-[11px] text-market-text-muted font-medium">NASDAQ</div>
-          <div class="text-sm font-bold text-market-dark mt-0.5">17,145.63</div>
-          <div class="text-[11px] font-semibold text-positive">▲ +1.22%</div>
+        <a href="/region/us" class="bg-canvas rounded-lg px-4 py-3 hover:shadow-[var(--elevation-1)] transition-shadow border border-hairline">
+          <div class="type-micro text-ink-mute font-medium">NASDAQ</div>
+          <div class="text-sm font-bold text-ink mt-0.5" style="font-weight:540">17,145.63</div>
+          <div class="type-micro font-semibold text-positive">▲ +1.22%</div>
         </a>
-        <a href="/region/us" class="bg-market-bg rounded-lg px-3 py-2.5 hover:bg-gray-100 transition-colors">
-          <div class="text-[11px] text-market-text-muted font-medium">Dow Jones</div>
-          <div class="text-sm font-bold text-market-dark mt-0.5">38,987.42</div>
-          <div class="text-[11px] font-semibold text-positive">▲ +0.65%</div>
+        <a href="/region/us" class="bg-canvas rounded-lg px-4 py-3 hover:shadow-[var(--elevation-1)] transition-shadow border border-hairline">
+          <div class="type-micro text-ink-mute font-medium">Dow Jones</div>
+          <div class="text-sm font-bold text-ink mt-0.5" style="font-weight:540">38,987.42</div>
+          <div class="type-micro font-semibold text-positive">▲ +0.65%</div>
         </a>
-        <a href="/region/gb" class="bg-market-bg rounded-lg px-3 py-2.5 hover:bg-gray-100 transition-colors">
-          <div class="text-[11px] text-market-text-muted font-medium">FTSE 100</div>
-          <div class="text-sm font-bold text-market-dark mt-0.5">8,214.56</div>
-          <div class="text-[11px] font-semibold text-negative">▼ -0.32%</div>
+        <a href="/region/gb" class="bg-canvas rounded-lg px-4 py-3 hover:shadow-[var(--elevation-1)] transition-shadow border border-hairline">
+          <div class="type-micro text-ink-mute font-medium">FTSE 100</div>
+          <div class="text-sm font-bold text-ink mt-0.5" style="font-weight:540">8,214.56</div>
+          <div class="type-micro font-semibold text-negative">▼ -0.32%</div>
         </a>
-        <a href="/region/in" class="bg-market-bg rounded-lg px-3 py-2.5 hover:bg-gray-100 transition-colors">
-          <div class="text-[11px] text-market-text-muted font-medium">Nifty 50</div>
-          <div class="text-sm font-bold text-market-dark mt-0.5">25,012.30</div>
-          <div class="text-[11px] font-semibold text-positive">▲ +0.92%</div>
+        <a href="/region/in" class="bg-canvas rounded-lg px-4 py-3 hover:shadow-[var(--elevation-1)] transition-shadow border border-hairline">
+          <div class="type-micro text-ink-mute font-medium">Nifty 50</div>
+          <div class="text-sm font-bold text-ink mt-0.5" style="font-weight:540">25,012.30</div>
+          <div class="type-micro font-semibold text-positive">▲ +0.92%</div>
         </a>
-        <a href="/region/us" class="bg-market-bg rounded-lg px-3 py-2.5 hover:bg-gray-100 transition-colors">
-          <div class="text-[11px] text-market-text-muted font-medium">Bitcoin</div>
-          <div class="text-sm font-bold text-market-dark mt-0.5">$68,432</div>
-          <div class="text-[11px] font-semibold text-positive">▲ +2.34%</div>
+        <a href="/region/us" class="bg-canvas rounded-lg px-4 py-3 hover:shadow-[var(--elevation-1)] transition-shadow border border-hairline">
+          <div class="type-micro text-ink-mute font-medium">Bitcoin</div>
+          <div class="text-sm font-bold text-ink mt-0.5" style="font-weight:540">$68,432</div>
+          <div class="type-micro font-semibold text-positive">▲ +2.34%</div>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- Featured + Main Content -->
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
-    <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
-      <div class="lg:col-span-3 space-y-6">
+  <!-- Main Content — White Canvas -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-10">
+      <div class="lg:col-span-3 space-y-10 sm:space-y-12">
+
         <!-- Featured Hero -->
         {featuredArticles.length > 0 && (
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div class="md:col-span-2">
-              <NewsCard article={featuredArticles[0]} featured={true} />
+          <section>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="md:col-span-2">
+                <NewsCard article={featuredArticles[0]} featured={true} />
+              </div>
+              {featuredArticles.slice(1).map(a => (
+                <NewsCard article={a} horizontal={true} />
+              ))}
             </div>
-            {featuredArticles.slice(1).map(a => (
-              <NewsCard article={a} horizontal={true} />
-            ))}
-          </div>
+          </section>
         )}
 
-        <!-- Latest -->
-        <div>
-          <div class="flex items-center gap-3 mb-3">
-            <h2 class="text-base font-bold text-market-dark">Latest News</h2>
-            <div class="flex-1 h-px bg-market-border"></div>
+        <!-- Latest News -->
+        <section id="latest">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-1 h-5 bg-primary rounded-full"></div>
+            <h2 class="type-display-md text-ink">Latest News</h2>
+            <div class="flex-1 h-px bg-hairline"></div>
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
             {latestArticles.map((article) => (<NewsCard article={article} />))}
           </div>
-        </div>
+        </section>
 
         <!-- Stocks -->
         {stocksArticles.length > 0 && (
-          <div>
-            <div class="flex items-center gap-3 mb-3">
-              <h2 class="text-base font-bold text-market-dark">🏢 Stocks</h2>
-              <div class="flex-1 h-px bg-market-border"></div>
-              <a href="/category/stocks" class="text-[12px] text-market-blue hover:underline font-medium">More →</a>
+          <section class="bg-canvas-soft rounded-lg border border-hairline p-5 sm:p-6">
+            <div class="flex items-center gap-3 mb-4">
+              <h2 class="type-display-md text-ink">🏢 Stocks</h2>
+              <div class="flex-1 h-px bg-hairline"></div>
+              <a href="/category/stocks" class="type-caption font-semibold text-primary hover:text-primary-deep transition-colors">More →</a>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
               {stocksArticles.map((article) => (<NewsCard article={article} />))}
             </div>
-          </div>
+          </section>
         )}
 
-        <!-- Commodities + Economy dual layout -->
+        <!-- Commodities + Economy -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           {commoditiesArticles.length > 0 && (
-            <div>
-              <div class="flex items-center gap-3 mb-3">
-                <h2 class="text-base font-bold text-market-dark">🛢️ Commodities</h2>
-                <div class="flex-1 h-px bg-market-border"></div>
-                <a href="/category/commodities" class="text-[12px] text-market-blue hover:underline font-medium">More →</a>
+            <section>
+              <div class="flex items-center gap-3 mb-4">
+                <h2 class="type-display-md text-ink">🛢️ Commodities</h2>
+                <div class="flex-1 h-px bg-hairline"></div>
+                <a href="/category/commodities" class="type-caption font-semibold text-primary hover:text-primary-deep transition-colors">More →</a>
               </div>
               <div class="space-y-3">
                 {commoditiesArticles.slice(0, 3).map((article) => (<NewsCard article={article} horizontal={true} />))}
               </div>
-            </div>
+            </section>
           )}
           {economyArticles.length > 0 && (
-            <div>
-              <div class="flex items-center gap-3 mb-3">
-                <h2 class="text-base font-bold text-market-dark">📈 Economy</h2>
-                <div class="flex-1 h-px bg-market-border"></div>
-                <a href="/category/economy" class="text-[12px] text-market-blue hover:underline font-medium">More →</a>
+            <section>
+              <div class="flex items-center gap-3 mb-4">
+                <h2 class="type-display-md text-ink">📈 Economy</h2>
+                <div class="flex-1 h-px bg-hairline"></div>
+                <a href="/category/economy" class="type-caption font-semibold text-primary hover:text-primary-deep transition-colors">More →</a>
               </div>
               <div class="space-y-3">
                 {economyArticles.slice(0, 3).map((article) => (<NewsCard article={article} horizontal={true} />))}
               </div>
-            </div>
+            </section>
           )}
         </div>
 
         <!-- ETFs -->
         {etfArticles.length > 0 && (
-          <div>
-            <div class="flex items-center gap-3 mb-3">
-              <h2 class="text-base font-bold text-market-dark">📦 ETFs & Mutual Funds</h2>
-              <div class="flex-1 h-px bg-market-border"></div>
-              <a href="/category/etf" class="text-[12px] text-market-blue hover:underline font-medium">More →</a>
+          <section>
+            <div class="flex items-center gap-3 mb-4">
+              <h2 class="type-display-md text-ink">📦 ETFs & Mutual Funds</h2>
+              <div class="flex-1 h-px bg-hairline"></div>
+              <a href="/category/etf" class="type-caption font-semibold text-primary hover:text-primary-deep transition-colors">More →</a>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
               {etfArticles.map((article) => (<NewsCard article={article} />))}
             </div>
-          </div>
+          </section>
         )}
 
         <!-- Forex -->
         {forexArticles.length > 0 && (
-          <div>
-            <div class="flex items-center gap-3 mb-3">
-              <h2 class="text-base font-bold text-market-dark">💱 Forex</h2>
-              <div class="flex-1 h-px bg-market-border"></div>
-              <a href="/category/forex" class="text-[12px] text-market-blue hover:underline font-medium">More →</a>
+          <section>
+            <div class="flex items-center gap-3 mb-4">
+              <h2 class="type-display-md text-ink">💱 Forex</h2>
+              <div class="flex-1 h-px bg-hairline"></div>
+              <a href="/category/forex" class="type-caption font-semibold text-primary hover:text-primary-deep transition-colors">More →</a>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {forexArticles.map((article) => (<NewsCard article={article} />))}
             </div>
-          </div>
+          </section>
         )}
 
-        <!-- Markets by Region -->
-        <div>
-          <div class="flex items-center gap-3 mb-3">
-            <h2 class="text-base font-bold text-market-dark">Global Markets</h2>
-            <div class="flex-1 h-px bg-market-border"></div>
+        <!-- Global Markets -->
+        <section>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-1 h-5 bg-primary rounded-full"></div>
+            <h2 class="type-display-md text-ink">Global Markets</h2>
+            <div class="flex-1 h-px bg-hairline"></div>
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
             {Object.entries(REGIONS).map(([code, region]) => {
               const arts = regionArticles[code] || [];
               if (arts.length === 0) return null;
               return (
-                <a href={`/region/${code}`} class="bg-white rounded-lg border border-market-border overflow-hidden hover:shadow-md transition-shadow">
-                  <div class="px-4 py-3 border-b border-market-border flex items-center justify-between">
-                    <h3 class="text-sm font-bold text-market-dark">{region.flag} {region.name}</h3>
-                    <svg class="w-3.5 h-3.5 text-market-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <a href={`/region/${code}`} class="bg-canvas rounded-lg border border-hairline overflow-hidden hover:shadow-[var(--elevation-1)] transition-shadow">
+                  <div class="px-4 py-3 border-b border-hairline flex items-center justify-between">
+                    <h3 class="type-body-md font-semibold text-ink">{region.flag} {region.name}</h3>
+                    <svg class="w-3.5 h-3.5 text-ink-faint" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                     </svg>
                   </div>
-                  <div class="divide-y divide-market-border">
+                  <div class="divide-y divide-hairline">
                     {arts.slice(0, 3).map((article) => (
-                      <div class="px-4 py-2.5 hover:bg-market-bg">
-                        <h4 class="text-[13px] font-medium text-market-dark line-clamp-2 leading-snug">{article.title}</h4>
-                        <span class="text-[11px] text-market-text-muted mt-0.5 block">{formatDate(article.publishedAt)}</span>
+                      <div class="px-4 py-2.5 hover:bg-canvas-soft">
+                        <h4 class="type-caption font-medium text-ink line-clamp-2 leading-snug">{article.title}</h4>
+                        <span class="type-micro text-ink-faint mt-0.5 block">{formatDate(article.publishedAt)}</span>
                       </div>
                     ))}
                   </div>
@@ -196,7 +235,7 @@ Object.keys(REGIONS).forEach(code => {
               );
             })}
           </div>
-        </div>
+        </section>
       </div>
 
       <!-- Sidebar -->
@@ -205,6 +244,24 @@ Object.keys(REGIONS).forEach(code => {
       </div>
     </div>
   </div>
+
+  <!-- Closing Teal Band -->
+  <section class="bg-surface-teal-deep border-t border-surface-teal-mid/30">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24 text-center">
+      <h2 class="type-display-lg text-on-primary mb-4 sm:mb-6">
+        Stay Ahead of the Markets
+      </h2>
+      <p class="type-body-lg text-on-dark-mute max-w-xl mx-auto mb-8 sm:mb-10">
+        Get real-time financial news, market data, and analysis delivered to your feed. Always free, always fresh.
+      </p>
+      <a href="#markets" class="inline-flex items-center gap-2 px-6 py-3 bg-canvas text-surface-teal-deep rounded-md type-button-md font-semibold hover:bg-canvas/90 transition-colors">
+        Start Tracking
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+        </svg>
+      </a>
+    </div>
+  </section>
 
   <Fragment slot="footer"><Footer /></Fragment>
 </Base>
