@@ -1,8 +1,7 @@
-name: Build and Deploy to Cloudflare Pages
+name: Build and Deploy to GitHub Pages
 
 on:
   schedule:
-    # Every 30 minutes during peak hours; every 2 hours otherwise
     - cron: '*/30 6-22 * * *'
     - cron: '0 0-5,23 * * *'
   push:
@@ -11,7 +10,8 @@ on:
 
 permissions:
   contents: read
-  deployments: write
+  pages: write
+  id-token: write
 
 concurrency:
   group: deploy-${{ github.ref }}
@@ -42,10 +42,22 @@ jobs:
 
       - name: Build Astro site
         run: npx astro build
+        env:
+          SITE_URL: ${{ vars.SITE_URL || 'https://gauravsengar24.github.io/global-news-hub' }}
 
-      - name: Deploy to Cloudflare Pages
-        uses: cloudflare/wrangler-action@v3
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy dist --project-name=global-news-hub --branch=${{ github.head_ref || github.ref_name }}
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

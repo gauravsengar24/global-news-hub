@@ -8,7 +8,7 @@ const DIST_DIR = path.join(__dirname, '..', 'dist');
 const ARTICLES_FILE = path.join(DATA_DIR, 'articles.json');
 const META_FILE = path.join(DATA_DIR, 'meta.json');
 
-const SITE_URL = 'https://global-news.pages.dev';
+const SITE_URL = process.env.SITE_URL || 'https://gauravsengar24.github.io/global-news-hub';
 const REGIONS = ['us', 'gb', 'in', 'jp', 'cn', 'au', 'eu'];
 const CATEGORIES = ['top', 'world', 'technology', 'business', 'sports', 'science', 'health', 'entertainment'];
 
