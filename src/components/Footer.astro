@@ -2,61 +2,62 @@
 import { CATEGORIES } from '../lib/regions';
 ---
 
-<footer class="bg-gray-900 text-gray-300 mt-16">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-      <div class="sm:col-span-2 lg:col-span-1">
-        <a href="/" class="inline-flex items-center gap-2 text-xl font-bold text-white mb-3">
-          <svg class="w-5 h-5 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+<footer class="bg-market-navy text-gray-400 mt-10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+      <div class="col-span-2 md:col-span-1">
+        <a href="/" class="inline-flex items-center gap-1.5 text-lg font-extrabold text-white mb-3">
+          <svg class="w-6 h-6 text-market-blue" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
           </svg>
-          Market<span class="text-emerald-400">Pulse</span>
+          Market<span class="text-market-blue">Pulse</span>
         </a>
-        <p class="text-sm text-gray-400 leading-relaxed">
-          Real-time financial market news and analysis. Covering global stock markets, commodities, ETFs, mutual funds, forex, and economic indicators.
+        <p class="text-[13px] text-gray-500 leading-relaxed">
+          Real-time financial market news and analysis. Covering global stock markets, commodities, ETFs, mutual funds, forex, and economic indicators that move global markets.
+        </p>
+        <p class="text-[11px] text-gray-600 mt-3">
+          Data sourced from publicly available RSS feeds.
+          Not financial advice. Always do your own research.
         </p>
       </div>
 
       <div>
-        <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-3">Markets</h3>
-        <ul class="space-y-2">
-          <li><a href="/region/us" class="text-sm text-gray-400 hover:text-white transition-colors">🇺🇸 US Markets</a></li>
-          <li><a href="/region/gb" class="text-sm text-gray-400 hover:text-white transition-colors">🇪🇺 UK & Europe</a></li>
-          <li><a href="/region/in" class="text-sm text-gray-400 hover:text-white transition-colors">🇮🇳 India Markets</a></li>
-          <li><a href="/region/jp" class="text-sm text-gray-400 hover:text-white transition-colors">🇯🇵 Japan Markets</a></li>
-          <li><a href="/region/cn" class="text-sm text-gray-400 hover:text-white transition-colors">🇨🇳 China Markets</a></li>
-          <li><a href="/region/au" class="text-sm text-gray-400 hover:text-white transition-colors">🇦🇺 Australia Markets</a></li>
-          <li><a href="/region/em" class="text-sm text-gray-400 hover:text-white transition-colors">🌏 Emerging Markets</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-3">Sectors</h3>
-        <ul class="space-y-2">
-          {CATEGORIES.map(c => (
-            <li><a href={`/category/${c.id}`} class="text-sm text-gray-400 hover:text-white transition-colors">{c.name}</a></li>
+        <h4 class="text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-3">Markets</h4>
+        <ul class="space-y-1.5">
+          {[{code:'us',label:'🇺🇸 US Markets'},{code:'gb',label:'🇪🇺 UK & Europe'},{code:'in',label:'🇮🇳 India Markets'},{code:'jp',label:'🇯🇵 Japan Markets'},{code:'cn',label:'🇨🇳 China Markets'},{code:'au',label:'🇦🇺 Australia Markets'},{code:'em',label:'🌏 Emerging Markets'}].map(m => (
+            <li><a href={`/region/${m.code}`} class="text-[13px] text-gray-500 hover:text-white transition-colors">{m.label}</a></li>
           ))}
         </ul>
       </div>
 
       <div>
-        <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-3">Data</h3>
-        <p class="text-sm text-gray-400 mb-3">Get real-time market news delivered to your feed.</p>
-        <a href="/rss.xml" class="inline-flex items-center gap-2 text-sm text-orange-400 hover:text-orange-300 transition-colors font-medium">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M6.18 15.64a2.18 2.18 0 010 4.36 2.18 2.18 0 010-4.36M4 4.44A15.56 15.56 0 0119.56 20h-2.83A12.73 12.73 0 004 7.27V4.44m0 5.66a9.9 9.9 0 019.9 9.9h-2.83A7.07 7.07 0 004 12.93v-2.83z"/></svg>
-          RSS Feed
-        </a>
+        <h4 class="text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-3">Sectors</h4>
+        <ul class="space-y-1.5">
+          {CATEGORIES.map(c => (
+            <li><a href={`/category/${c.id}`} class="text-[13px] text-gray-500 hover:text-white transition-colors">{c.icon} {c.name}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-3">Data Feeds</h4>
+        <ul class="space-y-1.5">
+          <li><a href="/rss.xml" class="inline-flex items-center gap-1.5 text-[13px] text-orange-400 hover:text-orange-300 transition-colors">
+            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M6.18 15.64a2.18 2.18 0 010 4.36 2.18 2.18 0 010-4.36M4 4.44A15.56 15.56 0 0119.56 20h-2.83A12.73 12.73 0 004 7.27V4.44m0 5.66a9.9 9.9 0 019.9 9.9h-2.83A7.07 7.07 0 004 12.93v-2.83z"/></svg>
+            RSS Feed
+          </a></li>
+          <li><a href="/sitemap.xml" class="text-[13px] text-gray-500 hover:text-white transition-colors">Sitemap</a></li>
+        </ul>
       </div>
     </div>
 
-    <div class="mt-10 pt-8 border-t border-gray-800 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p class="text-xs text-gray-500">
-        &copy; {new Date().getFullYear()} MarketPulse. Data sourced from publicly available RSS feeds.
-        Not financial advice. Always do your own research.
+    <div class="mt-8 pt-6 border-t border-gray-800 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <p class="text-[11px] text-gray-600">
+        &copy; {new Date().getFullYear()} MarketPulse. Updates every 30 minutes.
       </p>
-      <div class="flex items-center gap-4 text-xs text-gray-500">
-        <span>Updates every 30 min</span>
-        <span class="w-1 h-1 rounded-full bg-gray-600"></span>
+      <div class="flex items-center gap-3 text-[11px] text-gray-600">
+        <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 bg-emerald-500 rounded-full"></span> Market Open</span>
+        <span>·</span>
         <span>Powered by open financial data</span>
       </div>
     </div>

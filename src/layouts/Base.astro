@@ -3,25 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="MarketPulse - Real-time financial market news covering stocks, commodities, ETFs, mutual funds, forex, and global market impact" />
-    <meta name="keywords" content="stock market, commodities, ETFs, mutual funds, forex, market news, investing" />
+    <meta name="description" content="MarketPulse - Real-time financial market news covering stocks, commodities, ETFs, mutual funds, forex, and global economic impact" />
+    <meta name="keywords" content="stock market, S&P 500, NASDAQ, commodities, ETFs, mutual funds, forex, market news" />
+    <meta property="og:site_name" content="MarketPulse" />
     <meta property="og:title" content="MarketPulse - Financial Markets News" />
-    <meta property="og:description" content="Real-time financial market news and analysis" />
+    <meta property="og:description" content="Track global markets with real-time financial news, stock market data, commodities prices, ETF analysis, and economic indicators" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="/og-image.png" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@marketpulse" />
     <link rel="canonical" href={"https://gauravsengar24.github.io/global-news-hub" + Astro.url.pathname} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&family=JetBrains+Mono:wght@400..600&display=swap" rel="stylesheet" />
-    <link rel="alternate" type="application/rss+xml" title="MarketPulse - All News" href="/rss.xml" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="alternate" type="application/rss+xml" title="MarketPulse" href="/rss.xml" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>MarketPulse - Financial Markets News</title>
+    <title>MarketPulse - Financial Markets News, Stock Quotes, & Market Data</title>
   </head>
-  <body class="min-h-screen bg-background text-text antialiased">
+  <body class="bg-market-bg text-market-dark antialiased">
     <a href="#main-content" class="skip-link">Skip to main content</a>
+    <slot name="ticker" />
     <slot name="header" />
-    <main id="main-content" class="min-h-[60vh]">
+    <main id="main-content">
       <slot />
     </main>
     <slot name="footer" />
